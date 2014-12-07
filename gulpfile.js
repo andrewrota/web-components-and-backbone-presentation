@@ -72,7 +72,6 @@ gulp.task('fonts', function() {
 gulp.task('sass', function() {
     del(['dist/css']);
     return gulp.src(paths.styles)
-            .pipe(scsslint())
             .pipe(sourcemaps.init())
             .pipe(sass())
             .pipe(csslint())

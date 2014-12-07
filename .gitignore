@@ -27,6 +27,10 @@ node_modules
 # Users Environment Variables
 .lock-wscript
 
+# IDE Configs
+*.iml
+.idea
+
 # Bower
 bower_components
 
