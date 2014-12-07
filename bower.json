@@ -1,0 +1,11 @@
+{
+    "name": "webcomponentsbackbonepresentation",
+    "version": "0.1.0",
+    "authors": ["Andrew Rota <rota.andrew@gmail.com>"],
+    "main": "src/js/init.js",
+    "moduleType": ["node"],
+    "license": "MIT",
+    "private": true,
+    "ignore": ["**/.*", "node_modules", "bower_components", "test", "tests", "__tests__"],
+    "dependencies": {"web-component-slides": "git://github.com/andrewrota/web-component-slides.git#master"}
+}
