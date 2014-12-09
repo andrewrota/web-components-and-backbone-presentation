@@ -48,5 +48,4 @@ var SlideshowView = Backbone.View.extend({
         }
     }
 });
-export
-default SlideshowView;
+export default SlideshowView;
