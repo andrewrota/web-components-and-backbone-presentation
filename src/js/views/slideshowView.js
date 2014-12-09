@@ -39,7 +39,7 @@ var SlideshowView = Backbone.View.extend({
     slideViews: [],
     initSlides: function() {
         var slideElements = this.el.querySelectorAll('slide-content');
-        for(var i = 0; i < slideElements.length; i++) {
+        for(let i = 0; i < slideElements.length; i++) {
             this.slideViews.push(new SlideView({
                 el: slideElements[i]
             }));
