@@ -1,5 +1,29 @@
 'use strict';
+import * as Backbone from 'backbone';
 import SlideshowView from './views/slideshowView.js';
-var view = new SlideshowView({
-    el: 'body'
+import SlideshowModel from './models/slideshowModel.js';
+
+
+var slideshowModel = new SlideshowModel();
+
+new SlideshowView({
+    el: 'body',
+    model: slideshowModel
 });
+
+var Router = Backbone.Router.extend({
+    routes: {
+        ':page': 'goToPage'
+    },
+    goToPage: function(page) {
+        slideshowModel.set({slideIndex : page}, {validate: true});
+    }
+});
+
+var router = new Router();
+
+Backbone.Events.listenTo(slideshowModel, 'change:slideIndex', function(event, slideIndex) {
+    router.navigate('#' + slideIndex);
+});
+
+Backbone.history.start();
