@@ -7,5 +7,8 @@
     "license": "MIT",
     "private": true,
     "ignore": ["**/.*", "node_modules", "bower_components", "test", "tests", "__tests__"],
-    "dependencies": {"web-component-slides": "git://github.com/andrewrota/web-component-slides.git#master"}
+    "dependencies": {
+        "web-component-slides": "git://github.com/andrewrota/web-component-slides.git#master",
+        "warpech-prism": "git://github.com/andrewrota/warpech-prism.git#master"
+    }
 }
