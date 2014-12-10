@@ -26,4 +26,6 @@ Backbone.Events.listenTo(slideshowModel, 'change:slideIndex', function(event, sl
     router.navigate('#' + slideIndex);
 });
 
-Backbone.history.start();
+if(!Backbone.history.start()) {
+    router.goToPage(0);
+}
