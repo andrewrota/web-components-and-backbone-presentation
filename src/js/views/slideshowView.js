@@ -15,6 +15,7 @@ var SlideshowView = Backbone.View.extend({
         this.model.listenTo(this.model, 'change:slideIndex', function(event, slideIndex) {
             view.handleCurrentSlideChange(slideIndex);
         });
+        this.progressBar = this.el.querySelector('.progress-bar');
         window.model = this.model;
     },
     goToSlide: function(slideIndex) {
@@ -22,6 +23,9 @@ var SlideshowView = Backbone.View.extend({
             slideView.hide();
         });
         this.slideViews[slideIndex].show();
+        if(this.progressBar) {
+            this.progressBar.style.width = (this.model.get('slideIndex') / (this.model.get('numberOfSlides') - 1)) * 100 + '%';
+        }
     },
     handleCurrentSlideChange: function(slideIndex) {
         this.goToSlide(slideIndex);
