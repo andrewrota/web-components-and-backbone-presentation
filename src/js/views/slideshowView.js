@@ -9,7 +9,7 @@ const DOWN_KEY_CODE = 40;
 const SPACE_KEY_CODE = 32;
 
 var SlideshowView = Backbone.View.extend({
-    initialize: function() {
+    initialize() {
         var view = this;
         this.initSlides();
         this.model.listenTo(this.model, 'change:slideIndex', function(event, slideIndex) {
@@ -18,7 +18,7 @@ var SlideshowView = Backbone.View.extend({
         this.progressBar = this.el.querySelector('.progress-bar');
         window.model = this.model;
     },
-    goToSlide: function(slideIndex) {
+    goToSlide(slideIndex) {
         this.slideViews.forEach(slideView => {
             slideView.hide();
         });
@@ -27,10 +27,10 @@ var SlideshowView = Backbone.View.extend({
             this.progressBar.style.width = (this.model.get('slideIndex') / (this.model.get('numberOfSlides') - 1)) * 100 + '%';
         }
     },
-    handleCurrentSlideChange: function(slideIndex) {
+    handleCurrentSlideChange(slideIndex) {
         this.goToSlide(slideIndex);
     },
-    handleKeydown: function(e) {
+    handleKeydown(e) {
         if(e.which === RIGHT_KEY_CODE || e.which === DOWN_KEY_CODE || e.which === SPACE_KEY_CODE) {
             this.model.set({'slideIndex':  parseInt(this.model.get('slideIndex'), 10) + 1}, {validate:true});
         } else if(e.which === LEFT_KEY_CODE || e.which === UP_KEY_CODE) {
@@ -41,7 +41,7 @@ var SlideshowView = Backbone.View.extend({
         'keydown': 'handleKeydown'
     },
     slideViews: [],
-    initSlides: function() {
+    initSlides() {
         var slideElements = this.el.querySelectorAll('slide-content');
         for(let i = 0; i < slideElements.length; i++) {
             this.slideViews.push(new SlideView({

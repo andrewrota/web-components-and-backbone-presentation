@@ -15,7 +15,7 @@ var Router = Backbone.Router.extend({
     routes: {
         ':page': 'goToPage'
     },
-    goToPage: function(page) {
+    goToPage(page) {
         slideshowModel.set({slideIndex : page}, {validate: true});
     }
 });

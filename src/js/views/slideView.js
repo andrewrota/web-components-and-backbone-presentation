@@ -2,16 +2,16 @@
 import * as Backbone from 'backbone';
 
 var SlideView = Backbone.View.extend({
-    show: function() {
+    show() {
         this.el.show();
     },
-    hide: function() {
+    hide() {
         this.el.hide();
     },
-    goToNext: function() {
+    goToNext() {
         this.el.goToNext();
     },
-    goToPrev: function() {
+    goToPrev() {
         this.el.goToPrev();
     }
 });
