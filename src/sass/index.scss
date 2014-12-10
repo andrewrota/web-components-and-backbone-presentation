@@ -300,19 +300,57 @@ slide-content .sub-title {
         margin-left: 0;
     }
 }
-slide-show {
-    /deep/ .progress-bar {
+.slideshow {
+
+
+    .prev,
+    .next {
+        width: 0;
+        height: 0;
+        position: absolute;
+        bottom: 5vh;
+        cursor: pointer;
+        // Reset appearance of button element
+        background: transparent;
+        padding: 0;
+        -webkit-appearance: none;
+        margin: 0;
+        border: none;
+    }
+    .prev {
+        border-top: 3.5vh solid transparent;
+        border-bottom: 3.5vh solid transparent;
+        border-right: 10px solid lightgray;
+        left: 10px;
+    }
+    .next {
+        border-top: 3.5vh solid transparent;
+        border-bottom: 3.5vh solid transparent;
+        border-left: 10px solid lightgray;
+        right: 10px;
+    }
+    .progress-bar {
+        position: fixed;
+        height: 5px;
+        bottom: 0;
+        left: 0;
+        z-index: 2;
+        background-color: gray;
+    }
+
+    .progress-bar {
         background-color: $quinary;
         /* Animation technique from Reveal.js <https://github.com/hakimel/reveal.js> */
         transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
     }
-    /deep/ .next, {
+    .next, {
         border-left-color: $quaternary;
     }
-    /deep/ .prev, {
+    .prev, {
         border-right-color: $quaternary;
         z-index: 2;
     }
+
 }
 
 .video-container {
@@ -468,7 +506,7 @@ slide-show {
         height: 6in;
         display: block;
     }
-    slide-show /deep/ .progress-bar {
+    .slideshow /deep/ .progress-bar {
         display: none;
     }
     slide-content {
