@@ -5,39 +5,152 @@
     <title>Hi, world!</title>
     <link rel="stylesheet" href="css/index.css">
     <link rel="import" href="../bower_components/web-component-slides/dist/slide-content.html">
+    <link rel="import" href="../bower_components/warpech-prism/code-prism.html">
     <link href='//fonts.googleapis.com/css?family=Lato:100,300|Muli|Open+Sans' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Mr+Dafoe|Engagement' rel='stylesheet' type='text/css'>
 </head>
 <body>
 <div class="slideshow">
+    <!-- samples -->
+<!--     <slide-content>
+        <h1>Title with Code</h1>
+        <code-prism>console.log('Hello, world.');</code-prism>
+    </slide-content>
+    <slide-content>
+        <h1>Blockquote</h1>
+        <blockquote>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br><span class="attr"><a href="#" target="_blank">- Author</a></span>
+        </blockquote>
+    </slide-content> -->
+    <!-- end samples -->
+    <slide-content class="title-slide">
+        <h1>Web Components + Backbone</h1>
+    </slide-content>
     <slide-content>
         <h1>Introduction</h1>
     </slide-content>
-    <slide-content>
-        <h1>What problem do we have with UI modules?</h1>
+    <slide-content class="absolute-center-container">
+        <h1 class="absolute-center center-text">What problem do we have with UI modules?</h1>
     </slide-content>
     <slide-content>
         <h1>Web Components are game changing</h1>
     </slide-content>
     <slide-content>
-        <h1>Shadow DOM</h1>
-    </slide-content>
-    <slide-content>
-        <h1>Custom Elements</h1>
-    </slide-content>
-    <slide-content>
-        <h1>HTML Templates</h1>
-    </slide-content>
-    <slide-content>
-        <h1>HTML Imports</h1>
-    </slide-content>
+            <h1>Web Components</h1>
+            <blockquote>
+                Web Components usher in a <strong>new era</strong> of web development based on <strong>encapsulated and interoperable</strong> custom elements that extend HTML itself. <span class="attr"><a href="https://www.polymer-project.org/" target="_blank">- Polymer</a></span>
+            </blockquote>
+        </slide-content>
+        <slide-content>
+            <h1>Web Components APIs</h1>
+            <h2>Custom Elements</h2>
+            <h2>HTML Templates</h2>
+            <h2>HTML Imports</h2>
+            <h2>Shadow DOM</h2>
+        </slide-content>
+        
+        <slide-content>
+            <h1>Web Components APIs</h1>
+            <h2><strong>Custom Elements</strong></h2>
+            <h2>HTML Templates</h2>
+            <h2>HTML Imports</h2>
+            <h2>Shadow DOM</h2>
+        </slide-content>
+        <slide-content>
+            <h1>Custom Elements</h1>
+            <code-prism language="markup">
+&#x3C;my-element&#x3E;Hello World.&#x3C;/my-element&#x3E;
+            </code-prism>
+            <br>
+            <code-prism>
+var MyElement = document.registerElement('my-element', {
+  prototype: Object.create(HTMLElement.prototype)
+});
+            </code-prism>
+        </slide-content>
+        <slide-content>
+            <h1>Web Components APIs</h1>
+            <h2>Custom Elements</h2>
+            <h2><strong>HTML Templates</strong></h2>
+            <h2>HTML Imports</h2>
+            <h2>Shadow DOM</h2>
+        </slide-content>
+        <slide-content>
+            <h1>HTML Templates</h1>
+        <code-prism language="markup">&lt;template id=&quot;my-template&quot;&gt;
+    &lt;p&gt;Hello World.&lt;/p&gt;
+    &lt;!-- This image won't be downloaded on page load --&gt;
+    &lt;img src=&quot;example.jpg&quot; alt=&quot;Example&quot;&gt;
+&lt;/template&gt;</code-prism>
+        <br>
+        <code-prism language="javascript">document.importNode(
+    document.getElementById('my-template').content,
+    true
+);
+</code-prism>
+        </slide-content>
+        <slide-content>
+            <h1>Web Components APIs</h1>
+            <h2>Custom Elements</h2>
+            <h2>HTML Templates</h2>
+            <h2><strong>HTML Imports</strong></h2>
+            <h2>Shadow DOM</h2>
+        </slide-content>
+        <slide-content>
+            <h1>HTML Imports</h1>
+            <code-prism language="markup">&lt;link rel=&quot;import&quot; href=&quot;/imports/my-component.html&quot;&gt;</code-prism>
+            <img class="full-width-image" src="../assets/html-imports.png">
+        </slide-content>
+        <slide-content>
+            <h1>Web Components APIs</h1>
+            <h2>Custom Elements</h2>
+            <h2>HTML Templates</h2>
+            <h2>HTML Imports</h2>
+            <h2><strong>Shadow DOM</strong></h2>
+        </slide-content>
     <slide-content>
         <h1>What they don’t provide?</h1>
+            <h2>Data Binding</h2>
+            <h2>Application Structure</h2>
+            <h2>Server Interaction</h2>
     </slide-content>
     <slide-content>
         <h1>What do we gain with Backbone?</h1>
+        <h2>Custom Events</h2>
+        <h2>Event Handling</h2>
+        <h2>Server Interface</h2>
+        <h2>Application Structure</h2>
+        <h2></h2>
     </slide-content>
     <slide-content>
-        <h1>How can we combine each of the APIs?</h1>
+        <h1>Backbone + Custom Elements</h1>
+        <code-prism>Backbone.View.extend({
+  tagName: 'my-custom-element'
+});</code-prism>
+    </slide-content>
+    <slide-content>
+        <h1>Backbone + HTML Templates</h1>
+        <code-prism>Backbone.View.extend({
+  template: document.importNode(
+    document.getElementById('my-template').content,
+    true
+  ),
+  render: function() {
+    this.el.innerHTML = this.template;
+  }
+});</code-prism>
+    </slide-content>
+    <slide-content>
+        <h1>Backbone + HTML Imports</h1>
+        <code-prism>&lt;link rel=&quot;import&quot; href=&quot;my-custom-component.html&quot;&gt;</code-prism>
+    </slide-content>
+    <slide-content>
+        <h1>Backbone + Shadow DOM</h1>
+        <code-prism>Backbone.View.extend({
+  initialize: function() {
+    this.el.createShadowRoot();
+  }
+});</code-prism>
     </slide-content>
     <slide-content>
         <h1>Consuming a Web Component with Backbone</h1>

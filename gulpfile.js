@@ -22,8 +22,9 @@ var paths = {
     scriptInit: 'init.js',
     styles: ['src/sass/*.scss'],
     fonts: 'src/**/*.woff',
-    images: ['src/images/**/*.jpg', 'src/images/**/*.gif']
+    images: ['src/images/**/*.jpg', 'src/images/**/*.gif', 'src/images/**/*.png']
 };
+
 // webpack
 gulp.task('webpack', function() {
     del(['dist/**/*.js']);
