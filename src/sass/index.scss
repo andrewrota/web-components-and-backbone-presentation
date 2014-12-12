@@ -100,7 +100,9 @@ code-prism /deep/ pre {
     padding-right: 5%;
     margin-top: 25px;
     box-sizing: border-box;
-    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
 
 }
 
@@ -117,7 +119,7 @@ google-map {
 }
 
 github-card {
-    float: left;
+    margin: 20px;
 }
 
 paper-progress {
@@ -209,10 +211,23 @@ paper-input {
     vertical-align: middle;
     line-height: 2em;
 }
-.center-heading {
-    text-align: center;
-    margin-top: 30vh !important;
+.half-width {
+    max-width: 50%;
 }
+.flex-center {
+    text-align: center;
+}
+.flex-center, .flex-container /deep/ pre {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-bottom: 7.5vh;
+}
+
+ .flex-container /deep/ pre {
+     width: 100%;
+ }
 .absolute-center-container {
     position: relative;
 }
@@ -294,6 +309,12 @@ h2 {
     margin-left: 20px;
 }
 
+h4 {
+    color: $standardDark;
+    margin-left: 20px;
+    font-size: .7em;
+}
+
 h2 strong {
     text-decoration: underline;
 }
@@ -312,11 +333,16 @@ slide-content {
     background: $primary;
     box-sizing: border-box;
     padding-left: 25px;
-    height: 97vh;
+    height: 100vh;
     width: 100%;
     position: absolute;
     top: 0;
     left: 0;
+}
+
+.flex-container {
+    display: flex;
+    height: 100vh;
 }
 
 slide-content .sub-title {

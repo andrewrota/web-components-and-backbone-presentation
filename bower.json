@@ -9,6 +9,13 @@
     "ignore": ["**/.*", "node_modules", "bower_components", "test", "tests", "__tests__"],
     "dependencies": {
         "web-component-slides": "git://github.com/andrewrota/web-component-slides.git#master",
-        "warpech-prism": "git://github.com/andrewrota/warpech-prism.git#master"
+        "warpech-prism": "git://github.com/andrewrota/warpech-prism.git#master",
+        "github-card": "git://github.com/pazguille/github-card.git#master",
+        "chrome-logo": "https://raw.githubusercontent.com/alrra/browser-logos/master/chrome/chrome_128x128.png",
+        "opera-logo": "https://raw.githubusercontent.com/alrra/browser-logos/master/opera/opera_128x128.png",
+        "firefox-logo": "https://raw.githubusercontent.com/alrra/browser-logos/master/firefox/firefox_128x128.png",
+        "safari-logo": "https://raw.githubusercontent.com/alrra/browser-logos/master/safari/safari_128x128.png",
+        "ie-logo": "https://raw.githubusercontent.com/alrra/browser-logos/master/internet-explorer/internet-explorer_128x128.png",
+        "polymer-logo": "https://www.polymer-project.org/images/logos/p-logo.svg"
     }
 }
