@@ -8,6 +8,8 @@
     <link rel="import" href="../bower_components/warpech-prism/code-prism.html">
     <link rel="import" href="../bower_components/paper-toast/paper-toast.html">
     <link rel="import" href="../bower_components/google-map/google-map.html">
+    <link rel="import" href="../bower_components/paper-checkbox/paper-checkbox.html">
+    <link rel="import" href="../bower_components/core-label/core-label.html">
     <link rel="import" href="../bower_components/github-card/webcomponent/github-card.html">
     <link href='//fonts.googleapis.com/css?family=Lato:100,300|Muli|Open+Sans' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Mr+Dafoe|Engagement' rel='stylesheet' type='text/css'>
@@ -26,25 +28,28 @@
         </blockquote>
     </slide-content> -->
     <!-- end samples -->
-     <slide-content>
-        <div class="flex-container">
-            <h1 class="flex-center">Web Components + Backbone</h1>
-        </div>
+     <slide-content class="animated-container">
+            <img class="animated-object" src="images/webcomponents.svg" />
+            <img class="animated-object" src="images/backbone.svg" />
     </slide-content>
     <slide-content>
-        <h1>Introduction</h1>
-    </slide-content>
+            <h1>UI Components</h1>
+                <div class="center-child">
+                    <a class="image-link" href="http://getbootstrap.com/" target="_blank"><img class="library-images" src="images/bower.png" /></a>
+                    <a class="image-link" href="http://foundation.zurb.com/" target="_blank"><img class="library-images" src="images/yeti-f5.png" /></a>
+                    <a class="image-link" href="http://jqueryui.com/" target="_blank"><img class="library-images" src="images/jqueryui.png" /></a>
+                    <a class="image-link" href="http://www.telerik.com/kendo-ui" target="_blank"><img class="library-images" src="images/kendoui.png" /></a>
+                    <br>
+                    <a class="image-link" href="http://dojotoolkit.org/" target="_blank"><img src="images/dojo.png" class="library-images"></a>
+                    <a class="image-link" href="http://www.sencha.com/products/extjs/" target="_blank"><img class="library-images" src="images/sencha.png"  /></a>
+                    <a class="image-link" href="http://yuilibrary.com/" target="_blank"><img src="images/yui.png" class="library-images"></a>
+                </div>
+        </slide-content>
     <slide-content>
-        <h1>UI Libraries</h1>
-        
-    </slide-content>
-    <slide-content>
-        <div class="flex-container">
-            <h1 class="flex-center half-width">What problem do we have with UI components?</h1>
-        </div>
-    </slide-content>
-    <slide-content>
-        <h1>Web Components are game changing</h1>
+            <h1>Component Library Features</h1>
+            <h2><strike>Portability</strike></h2>
+            <h2><strike>Style Encapsulation</strike></h2>
+            <h2><strike>Extensibility</strike></h2>
     </slide-content>
     <slide-content>
             <h1>Web Components</h1>
@@ -126,10 +131,10 @@ var MyElement = document.registerElement('my-element', {
         </slide-content>
     <slide-content>
             <h1>Shadow DOM</h1>
-            <code-prism language="markup">&lt;div id="my-first-element"&gt;&lt;/div&gt;&lt;p&gt;Light DOM.&lt;/p&gt;</code-prism>
+            <code-prism language="markup">&lt;div id="my-element"&gt;&lt;/div&gt;&lt;p&gt;Light DOM.&lt;/p&gt;</code-prism>
             <br>
             <code-prism>// Create Shadow Root
-var s = document.getElementById('my-first-element').createShadowRoot();
+var s = document.getElementById('my-element').createShadowRoot();
 // Add Styles and Text
 s.innerHTML += '&lt;style&gtp { color: crimson; }&lt;/style&gt';
 s.innerHTML += '&lt;p&gt;Shadow DOM.&lt;/p&gt;';</code-prism>
@@ -145,15 +150,15 @@ s.innerHTML += '&lt;p&gt;Shadow DOM.&lt;/p&gt;';</code-prism>
     </slide-content>
     <slide-content>
             <h1>Content Insertion Points</h1>
-            <code-prism language="markup">&lt;div id="my-second-element"&gt;
+            <code-prism language="markup">&lt;div id="my-element"&gt;
     &lt;content&gt;&lt;/content&gt;
 &lt;/div&gt;</code-prism>
         </slide-content>
         <slide-content>
             <h1>Shadow DOM and <code>&lt;content&gt;</code></h1>
-            <code-prism language="markup">&lt;div id="my-second-element"&gt;&lt;p&gt;Hello!&lt;/p&gt;&lt;/div&gt;</code-prism>
+            <code-prism language="markup">&lt;div id="my-element"&gt;&lt;p&gt;Hello!&lt;/p&gt;&lt;/div&gt;</code-prism>
             <br>
-            <code-prism>var s = document.getElementById('my-second-element').createShadowRoot();
+            <code-prism>var s = document.getElementById('my-element').createShadowRoot();
 s.innerHTML += '&lt;p&gt;Shadow DOM Start.&lt;/p&gt;';
 s.innerHTML += '&lt;style&gtp { color: crimson; }&lt;/style&gt';
 s.innerHTML += '&lt;content&gt;&lt;/content&gt;';
@@ -161,43 +166,45 @@ s.innerHTML += '&lt;p&gt;Shadow DOM End.&lt;/p&gt;';</code-prism>
             <br>
             <div class="flex-container" style="height: 100px; vertical-align: middle;">
                 <div class="flex-center" style="margin-bottom: 0; border: 1px solid red; max-width: 50%; padding: 100px;">
-                    <div id="my-second-element"><p>Hello!</p></div>
+                    <div id="my-element"><p>Hello!</p></div>
                 </div>
             </div>
-            <script>(function(){var s = document.getElementById('my-second-element').createShadowRoot();s.innerHTML += '<style>p { color: crimson; margin: 5px 0; }</style>';s.innerHTML += '<p>Shadow DOM Start.</p>';s.innerHTML += '<content></content>';s.innerHTML += '<p>Shadow DOM End.</p>';}());</script>
+            <script>(function(){var s = document.getElementById('my-element').createShadowRoot();s.innerHTML += '<style>p { color: crimson; margin: 5px 0; }</style>';s.innerHTML += '<p>Shadow DOM Start.</p>';s.innerHTML += '<content></content>';s.innerHTML += '<p>Shadow DOM End.</p>';}());</script>
         </slide-content>
         <slide-content>
             <h1>Multiple <code>&lt;content&gt;</code> Elements</h1>
             
             
             <br>
-            <code-prism language="markup">&lt;div id=&quot;my-third-element&quot;&gt;
+            <code-prism language="markup">&lt;div id=&quot;another-element&quot;&gt;
   &lt;span class=&quot;name&quot;&gt;CSS Dev Conf&lt;/span&gt;
   &lt;span class=&quot;greeting&quot;&gt;Hello&lt;/span&gt;
 &lt;/div&gt;</code-prism>
             <br>
-            <code-prism>var s = document.getElementById('my-third-element').createShadowRoot();
+            <code-prism>s = document.getElementById('another-element').createShadowRoot();
 s.innerHTML += '&lt;content select=".greeting"&gt;&lt;/content&gt;, ';
 s.innerHTML += '&lt;content select=".name"&gt;&lt;/content&gt;!';
             </code-prism>
             <br>
             <div class="flex-container" style="height: 100px; vertical-align: middle;">
                 <div class="flex-center" style="margin-bottom: 0; border: 1px solid red; max-width: 50%; padding: 10px;">
-                    <div id="my-third-element"><span class="name">BackboneConf</span><span class="greeting">Hello</span></div>
+                    <div id="another-element"><span class="name">BackboneConf</span><span class="greeting">Hello</span></div>
                 </div>
             </div>
-            <script>(function(){var s = document.getElementById('my-third-element').createShadowRoot();s.innerHTML += '<content select=".greeting"></content>, '; s.innerHTML += '<content select=".name"></content>!';}());</script>
+            <script>(function(){var s = document.getElementById('another-element').createShadowRoot();s.innerHTML += '<content select=".greeting"></content>, '; s.innerHTML += '<content select=".name"></content>!';}());</script>
         </slide-content>
     <slide-content>
-        <h1>What Web Components don’t provide?</h1>
-            <h2>Data Binding</h2>
-            <h2>Application Structure</h2>
-            <h2>Server Interaction</h2>
+        <h1>What Web Components Lack...</h1>
+            <h2><strike>Application Structure</strike></h2>
+            <h2><strike>Server Interface</strike></h2>
+            <h2><strike>DOM Event Handling</strike></h2>
+            <h2><strike>Models/Collections + Events</strike></h2>
+        <h2></h2>
     </slide-content>
     <slide-content>
-        <h1>What do we gain with Backbone?</h1>
-        <h2>Server Interface</h2>
+        <h1>...We Gain with Backbone</h1>
         <h2>Application Structure</h2>
+        <h2>Server Interface</h2>
         <h2>DOM Event Handling</h2>
         <h2>Models/Collections + Events</h2>
         <h2></h2>
@@ -248,32 +255,6 @@ s.innerHTML += '&lt;content select=".name"&gt;&lt;/content&gt;!';
         </div>
     </slide-content>
     <slide-content>
-        
-    </slide-content>
-    <slide-content>
-        <h1>Know Your API</h1>
-        <h2>Attributes</h2>
-        <h2>Methods</h2>
-        <h2>Events</h2>
-    </slide-content>
-    <slide-content>
-        <h1><code>&lt;paper-toast&gt;</code></h1>
-        <br>
-        <img class="full-width-image" src="images/toast.gif" alt="" data-reset>
-    </slide-content>
-    <slide-content>
-        <h1>API</h1>
-            <code-prism class="flex-center" language="markup">&lt;paper-toast
-  text="Your toast is ready!"
-  duration="5000"
-  autoCloseDisabled
-&gt;&lt;/paper-toast&gt;</code-prism>
-            <code-prism class="flex-center">Element.show();
-Element.dismiss();
-Element.toggle();</code-prism>
-        <code-prism class="flex-center">Element.addEventListener('core-overlay-open-completed', doSomething);</code-prism>
-    </slide-content>
-    <slide-content>
         <h1><code>&lt;google-map&gt;</code></h1>
         <google-map style="height: 50vh"></google-map>
     </slide-content>
@@ -302,7 +283,7 @@ Element.toggle();</code-prism>
         <div class="flex-container">
             <code-prism class="flex-center">Backbone.View.extend({
   initialize: function() {
-    this.listenTo(this.model, 'change', this.moveMap);
+    this.listenTo(this.model, 'change', _.bind(this.moveMap, this);
   },
   moveMap: function(model) {
     this.el.setAttribute('latitude', this.model.get('lat'));
@@ -312,6 +293,33 @@ Element.toggle();</code-prism>
   tagName: 'google-map'
 });</code-prism>
         </div>
+    </slide-content>
+    <slide-content class="">
+        <br><br>
+        <img class="full-width-image" src="images/mapsapp.gif" alt="" data-reset>
+    </slide-content>
+    <slide-content>
+        <h1>Know Your API</h1>
+        <h2>Attributes</h2>
+        <h2>Methods</h2>
+        <h2>Events</h2>
+    </slide-content>
+    <slide-content>
+        <h1><code>&lt;paper-toast&gt;</code></h1>
+        <br>
+        <img class="full-width-image" src="images/toast.gif" alt="" data-reset>
+    </slide-content>
+    <slide-content>
+        <h1>API</h1>
+            <code-prism class="flex-center" language="markup">&lt;paper-toast
+  text="Your toast is ready!"
+  duration="5000"
+  autoCloseDisabled
+&gt;&lt;/paper-toast&gt;</code-prism>
+            <code-prism class="flex-center">Element.show();
+Element.dismiss();
+Element.toggle();</code-prism>
+        <code-prism class="flex-center">Element.addEventListener('core-overlay-open-completed', doSomething);</code-prism>
     </slide-content>
 <!--     <slide-content>
         <h1><code>&lt;github-card&gt;</code></h1>
@@ -366,9 +374,42 @@ element.attributeChangedCallback = function(attr, oldVal, newVal) {};
 
 element.detachedCallback = function() {};
 
-document.registerElement('my-element', {
+document.registerElement('hello-world', {
   prototype: element
 });</code-prism>
+        </div>
+    </slide-content>
+    <slide-content>
+    <div class="flex-container">
+            <code-prism class="flex-center">&lt;link
+  rel=&quot;import&quot;
+  href=&quot;components/hello-world/hello-world.html&quot;
+&gt;
+
+&lt;!-- [...] --&gt;
+
+&lt;hello-world&gt;I&#39;m a web component&lt;/hello-world&gt;</code-prism>
+        </div>
+    </slide-content>
+    <slide-content>
+        <h1>Should I Componentize?</h1><br>
+        <div style="margin-left: 25px;">
+        <core-label horizontal="" layout="" id="core-label-2">
+             <paper-checkbox for="" role="checkbox" tabindex="0" aria-checked="false" aria-labelledby="core-label-2"></paper-checkbox>
+             <h4>Does it encapsulate component-level logic?</h4>
+        </core-label><br>
+        <core-label horizontal="" layout="" id="core-label-2">
+             <paper-checkbox for="" role="checkbox" tabindex="0" aria-checked="false" aria-labelledby="core-label-2"></paper-checkbox>
+             <h4>Should it be portable?</h4>
+        </core-label><br>
+        <core-label horizontal="" layout="" id="core-label-2">
+             <paper-checkbox for="" role="checkbox" tabindex="0" aria-checked="false" aria-labelledby="core-label-2"></paper-checkbox>
+             <h4>Is it context independent?</h4>
+        </core-label><br>
+        <core-label horizontal="" layout="" id="core-label-2">
+             <paper-checkbox for="" role="checkbox" tabindex="0" aria-checked="false" aria-labelledby="core-label-2"></paper-checkbox>
+             <h4>Can the API be represented as attributes, methods, and events?</h4>
+        </core-label>
         </div>
     </slide-content>
     <slide-content>
@@ -381,7 +422,7 @@ document.registerElement('my-element', {
           <div class="half-column">
               <h2>Unit Tested</h2>
               <h2>Accessible</h2>
-              <h2>Responsive</h2>
+              <h2>Idempotent</h2>
           </div>
         </slide-content>
     <slide-content>

@@ -25,6 +25,14 @@ strong.emphasize {
     font-size: 125%;
 }
 
+.animated-object {
+    position: absolute;
+}
+
+.animated-container {
+    position: relative;
+}
+
 body {
     font-family: 'Open Sans', Helvetica, sans-serif;
     font-weight: 400;
@@ -313,6 +321,13 @@ h4 {
     color: $standardDark;
     margin-left: 20px;
     font-size: .7em;
+}
+
+core-label h4 {
+    margin: 0;
+    margin-left: 20px;
+    margin-top: -10px;
+    font-size: 1em;
 }
 
 h2 strong {
