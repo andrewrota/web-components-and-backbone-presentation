@@ -33,6 +33,38 @@ strong.emphasize {
     position: relative;
 }
 
+.diagram-component-block, .diagram-application-block {
+    line-height: 10vh;
+    vertical-align: middle;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    img {
+        height: 10vh;
+        vertical-align: middle;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+}
+
+.diagram-application-block {
+    width: 90%;
+    background-color: $secondary;
+    text-align: center;
+    color: $standardLight;
+    margin-right: 1%;
+    margin-left: 1%;
+}
+
+.diagram-component-block {
+    width: 16%;
+    margin-right: 1%;
+    margin-left: 1%;
+    background-color: $quinary;
+    display: inline-block;
+    text-align: center;
+    color: $standardDark;
+}
+
 body {
     font-family: 'Open Sans', Helvetica, sans-serif;
     font-weight: 400;
