@@ -31,6 +31,7 @@
     <slide-content>
         <h1>Who Am I?</h1>
         <!-- <div class="profile-image"></div> -->
+<!--         <h2 style="margin-bottom: 0;">@<span style="color: #8D4377">andrew</span>rota</h2> -->
         <h2 style="margin-bottom: 0;">Andrew Rota</h2>
         <div style="margin-left: 20px; margin-bottom: 10vh;">
             <h3 style="display: inline-block; vertical-align: middle; margin: 0; line-height: 50px;">JavaScript Engineer,</h3>
@@ -41,10 +42,76 @@
             <img style="height: 25%; margin-right: 5%;" src="images/backbone.svg" alt="">
     </slide-content>
     <slide-content>
-        <h1>Outline</h1>
-
+        <h1>JavaScript Modularity</h1>
+        <blockquote>
+            By using small libraries – components with a <strong>dedicated purpose</strong> and a <strong>small surface area</strong> – it becomes possible to pick and mix, to swap parts of our front end stack... <span class="attr"><a href="http://www.breck-mckye.com/blog/2014/12/the-state-of-javascript-in-2015/" target="_blank">- Jimmy Breck-McKye, "The State of JavaScript in 2015"</a></span>
+        </blockquote>
     </slide-content>
     <slide-content>
+        <h1>Modularity in HTML == DOM Elements</h1>
+        <img style="display: block; margin: 5% auto; width: 25%;" src="images/html5.svg" alt="">
+    </slide-content>
+    <slide-content>
+        <div class="flex-container">
+            <code-prism class="flex-center" language="markup">&lt;ul&gt;
+  &lt;li&gt;First Item&lt;/li&gt;
+  &lt;li&gt;Second Item&lt;/li&gt;
+&lt;/ul&gt;</code-prism>
+        </div>
+    </slide-content>
+    <slide-content>
+        <div class="flex-container">
+            <code-prism class="flex-center" language="markup">&lt;ol&gt;
+  &lt;li&gt;First Item&lt;/li&gt;
+  &lt;li&gt;Second Item&lt;/li&gt;
+&lt;/ol&gt;</code-prism>
+        </div>
+    </slide-content>
+    <slide-content>
+        <div class="flex-container">
+            <code-prism class="flex-center" language="markup">&lt;div class=&quot;header&quot;&gt;&lt;/div&gt;</code-prism>
+        </div>
+    </slide-content>
+    <slide-content>
+        <div class="flex-container">
+            <code-prism class="flex-center" language="markup">&lt;header&gt;&lt;/header&gt;</code-prism>
+        </div>
+    </slide-content>
+    <slide-content>
+        <div class="flex-container">
+            <code-prism class="flex-center" language="markup">&lt;div id=&quot;nav&quot;&gt;&lt;/div&gt;</code-prism>
+        </div>
+    </slide-content>
+    <slide-content>
+        <div class="flex-container">
+            <code-prism class="flex-center" language="markup">&lt;nav&gt;&lt;/nav&gt;</code-prism>
+        </div>
+    </slide-content>
+    <slide-content>
+        <br>
+        <br>
+        <blockquote>
+            Libraries > frameworks?<span class="attr"><a href="http://www.breck-mckye.com/blog/2014/12/the-state-of-javascript-in-2015/" target="_blank">- Jimmy Breck-McKye, "The State of JavaScript in 2015"</a></span>
+        </blockquote>
+    </slide-content>
+    <slide-content>
+        <br>
+        <br>
+        <blockquote>
+            Libraries > frameworks?<span class="attr"><a href="http://www.breck-mckye.com/blog/2014/12/the-state-of-javascript-in-2015/" target="_blank">- Jimmy Breck-McKye, "The State of JavaScript in 2015"</a></span>
+        </blockquote>
+        <blockquote>
+            Native Elements > libraries > frameworks.<br><span class="attr">- Me</span>
+        </blockquote>
+    </slide-content>
+    <slide-content>
+            <h1>Web Components</h1>
+            <blockquote style="float: left; width: 70%; margin-right: 2%;">
+                Web Components usher in a <strong>new era</strong> of web development based on <strong>encapsulated and interoperable</strong> custom elements that extend HTML itself. <span class="attr"><a href="https://www.polymer-project.org/" target="_blank">- Polymer Project</a></span>
+            </blockquote>
+            <img style="float: left; width: 20%; height: 50%;" src="images/webcomponents.svg" />
+    </slide-content>
+<!--     <slide-content>
             <h1>UI Components</h1>
                 <div class="center-child">
                     <a class="image-link" href="http://getbootstrap.com/" target="_blank"><img class="library-images" src="images/bower.png" /></a>
@@ -63,21 +130,16 @@
             <h2>Encapsulation</h2>
             <h2>Extensibility</h2>
     </slide-content>
-    <slide-content>
-            <h1>Web Components</h1>
-            <blockquote>
-                Web Components usher in a <strong>new era</strong> of web development based on <strong>encapsulated and interoperable</strong> custom elements that extend HTML itself. <span class="attr"><a href="https://www.polymer-project.org/" target="_blank">- Polymer</a></span>
-            </blockquote>
-        </slide-content>
+     -->
         <slide-content>
-            <h1>Web Components APIs</h1>
+            <h1>Web Component Technologies</h1>
             <h2>Custom Elements</h2>
             <h2>HTML Templates</h2>
             <h2>HTML Imports</h2>
             <h2>Shadow DOM</h2>
         </slide-content>
         <slide-content>
-            <h1>Web Components APIs</h1>
+            <h1>Web Component Technologies</h1>
             <h2><strong>Custom Elements</strong></h2>
             <h2>HTML Templates</h2>
             <h2>HTML Imports</h2>
@@ -96,7 +158,7 @@ var MyElement = document.registerElement('my-element', {
             </code-prism>
         </slide-content>
         <slide-content>
-            <h1>Web Components APIs</h1>
+            <h1>Web Component Technologies</h1>
             <h2>Custom Elements</h2>
             <h2><strong>HTML Templates</strong></h2>
             <h2>HTML Imports</h2>
@@ -117,7 +179,7 @@ var MyElement = document.registerElement('my-element', {
 </code-prism>
         </slide-content>
         <slide-content>
-            <h1>Web Components APIs</h1>
+            <h1>Web Component Technologies</h1>
             <h2>Custom Elements</h2>
             <h2>HTML Templates</h2>
             <h2><strong>HTML Imports</strong></h2>
@@ -130,7 +192,7 @@ var MyElement = document.registerElement('my-element', {
             <img  class="full-width-image" src="images/htmlimports.gif"  data-reset>
         </slide-content>
         <slide-content>
-            <h1>Web Components APIs</h1>
+            <h1>Web Component Technologies</h1>
             <h2>Custom Elements</h2>
             <h2>HTML Templates</h2>
             <h2>HTML Imports</h2>
@@ -223,7 +285,7 @@ s.innerHTML += '&lt;content select=".name"&gt;&lt;/content&gt;!';
     </slide-content>
     <slide-content>
         <div class="flex-container">
-            <h1 class="flex-center half-width">Web Component APIs<br>+<br>Backbone</h1>
+            <h1 class="flex-center half-width">Web Component Technologies<br>+<br>Backbone</h1>
         </div>
     </slide-content>
     <slide-content>
@@ -262,7 +324,7 @@ s.innerHTML += '&lt;content select=".name"&gt;&lt;/content&gt;!';
     </slide-content>
     <slide-content>
         <div class="flex-container">
-            <h1 class="flex-center half-width">Web Component APIs<br>+<br>Backbone</h1>
+            <h1 class="flex-center half-width">Web Component Technologies<br>+<br>Backbone</h1>
         </div>
     </slide-content>
     <slide-content>
@@ -300,7 +362,7 @@ s.innerHTML += '&lt;content select=".name"&gt;&lt;/content&gt;!';
         <div class="flex-container">
             <code-prism class="flex-center">Backbone.View.extend({
   initialize: function() {
-    this.listenTo(this.model, 'change', _.bind(this.moveMap, this);
+    this.listenTo(this.model, 'change', _.bind(this.moveMap, this));
   },
   moveMap: function(model) {
     this.el.setAttribute('latitude', this.model.get('lat'));
@@ -315,19 +377,19 @@ s.innerHTML += '&lt;content select=".name"&gt;&lt;/content&gt;!';
         <br><br>
         <img class="full-width-image" src="images/mapsapp.gif" alt="" data-reset>
     </slide-content>
-    <slide-content>
+<!--     <slide-content>
         <h1>Know Your API</h1>
         <h2>Attributes</h2>
         <h2>Methods</h2>
         <h2>Events</h2>
-    </slide-content>
+    </slide-content> -->
     <slide-content>
         <h1><code>&lt;paper-toast&gt;</code></h1>
         <br>
         <img class="full-width-image" src="images/toast.gif" alt="" data-reset>
     </slide-content>
     <slide-content>
-        <h1>API</h1>
+        <h1>Know Your API</h1>
             <code-prism class="flex-center" language="markup">&lt;paper-toast
   text="Your toast is ready!"
   duration="5000"
