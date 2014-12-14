@@ -13,6 +13,7 @@
     <link rel="import" href="../bower_components/github-card/webcomponent/github-card.html">
     <link href='//fonts.googleapis.com/css?family=Lato:100,300|Muli|Open+Sans' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Mr+Dafoe|Engagement' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
 </head>
 <body>
 <div class="slideshow">
@@ -151,14 +152,14 @@ s.innerHTML += '&lt;p&gt;Shadow DOM.&lt;/p&gt;';</code-prism>
             <br>
             <script>(function(){var s = document.getElementById('my-first-element').createShadowRoot();s.innerHTML += '<style>p { color: crimson;}</style>';s.innerHTML += '<p>Shadow DOM.</p>';}());</script>
     </slide-content>
-    <slide-content>
+<!--     <slide-content>
             <h1>Content Insertion Points</h1>
             <code-prism language="markup">&lt;div id="my-element"&gt;
     &lt;content&gt;&lt;/content&gt;
 &lt;/div&gt;</code-prism>
-        </slide-content>
+        </slide-content> -->
         <slide-content>
-            <h1>Shadow DOM and <code>&lt;content&gt;</code></h1>
+            <h1><code>&lt;content&gt;</code></h1>
             <code-prism language="markup">&lt;div id="my-element"&gt;&lt;p&gt;Hello!&lt;/p&gt;&lt;/div&gt;</code-prism>
             <br>
             <code-prism>var s = document.getElementById('my-element').createShadowRoot();
@@ -174,10 +175,10 @@ s.innerHTML += '&lt;p&gt;Shadow DOM End.&lt;/p&gt;';</code-prism>
             </div>
             <script>(function(){var s = document.getElementById('my-element').createShadowRoot();s.innerHTML += '<style>p { color: crimson; margin: 5px 0; }</style>';s.innerHTML += '<p>Shadow DOM Start.</p>';s.innerHTML += '<content></content>';s.innerHTML += '<p>Shadow DOM End.</p>';}());</script>
         </slide-content>
-        <slide-content>
+<!--         <slide-content>
             <h1>Multiple <code>&lt;content&gt;</code> Elements</h1>
-            
-            
+
+
             <br>
             <code-prism language="markup">&lt;div id=&quot;another-element&quot;&gt;
   &lt;span class=&quot;name&quot;&gt;BackboneConf&lt;/span&gt;
@@ -195,7 +196,7 @@ s.innerHTML += '&lt;content select=".name"&gt;&lt;/content&gt;!';
                 </div>
             </div>
             <script>(function(){var s = document.getElementById('another-element').createShadowRoot();s.innerHTML += '<content select=".greeting"></content>, '; s.innerHTML += '<content select=".name"></content>!';}());</script>
-        </slide-content>
+        </slide-content> -->
     <slide-content>
         <h1>What Web Components Lack...</h1>
             <h2><strike>Application Structure</strike></h2>
@@ -328,17 +329,36 @@ Element.dismiss();
 Element.toggle();</code-prism>
         <code-prism class="flex-center">Element.addEventListener('core-overlay-open-completed', doSomething);</code-prism>
     </slide-content>
-<!--     <slide-content>
+     <slide-content>
         <h1><code>&lt;github-card&gt;</code></h1>
         <h4>By @pazguille</h4>
-        <div class="flex-container" style="height: 70vh">
-            <div class="flex-center">
-                <github-card user="jashkenas"></github-card>
-                <github-card user="HenrikJoreteg"></github-card>
-            </div>
-        </div>
-
-    </slide-content> -->
+        <br>
+        <img class="full-width-image" src="images/githubcard.png" alt="">
+    </slide-content>
+    <slide-content>
+        <h1><code>&lt;x-calendar&gt;</code></h1>
+        <br>
+        <img class="full-width-image" src="images/x-calendar.gif" alt="">
+    </slide-content>
+    <slide-content>
+        <h1><code>&lt;x-slidemenu&gt;</code></h1>
+        <br>
+        <img class="full-width-image" src="images/x-slidemenu.gif" alt="">
+    </slide-content>
+    <slide-content>
+            <h1>Web Component All the Things??</h1>
+            <code-prism language="markup">&lt;backboneconf-app&gt;
+    &lt;backboneconf-menu&gt;&lt;/backboneconf-menu&gt;
+    &lt;backboneconf-content&gt;&lt;/backboneconf-content&gt;
+    &lt;backboneconf-footer&gt;&lt;/backboneconf-footer&gt;
+&lt;/backboneconf-app&gt;</code-prism>
+    </slide-content>
+        <slide-content>
+            <h1>Probably Not (and that's OK)</h1>
+            <blockquote>
+                I don't ever see us going all in on Custom Elements for every possible thing <small>...</small> <strong>Use native elements and controls when possible and supplement with custom elements</strong>. <br><span class="attr"><a href="http://webcomponents.org/articles/interview-with-joshua-peek/" target="_blank">- Joshua Peek, Github Programmer</a></span>
+            </blockquote>
+        </slide-content>
     <slide-content>
         <h1>Application + Components</h1>
         <br><br>
@@ -384,6 +404,31 @@ Element.toggle();</code-prism>
         <div class="diagram-component-block"><img src="images/backbone.svg"></div>
         <div class="diagram-component-block"><img src="images/webcomponents.svg"></div>
         <div class="diagram-component-block"><img src="images/webcomponents.svg"></div>
+    </slide-content>
+    <slide-content>
+        <h1>Application + Components</h1>
+        <br><br>
+
+        <div class="diagram-application-block"><img src="images/backbone.svg"></div>
+
+        <div class="diagram-component-block"><img src="images/webcomponents.svg"></div>
+        <div class="diagram-component-block"><img src="images/p-logo.svg"></div>
+        <div class="diagram-component-block"><img src="images/p-logo.svg"></div>
+        <div class="diagram-component-block"><img src="images/backbone.svg"></div>
+        <div class="diagram-component-block"><img src="images/backbone.svg"></div>
+
+        <div class="diagram-component-block"><img src="images/backbone.svg"></div>
+        <div class="diagram-component-block"><img src="images/backbone.svg"></div>
+        <div class="diagram-component-block"><img src="images/webcomponents.svg"></div>
+        <div class="diagram-component-block"><img src="images/backbone.svg"></div>
+        <div class="diagram-component-block"><span class="x-tag">&lt; <span>X</span> &gt;</span></div>
+
+        <div class="diagram-component-block"><span class="x-tag">&lt; <span>X</span> &gt;</span></div>
+        <div class="diagram-component-block"><img src="images/webcomponents.svg"></div>
+        <div class="diagram-component-block"><img src="images/backbone.svg"></div>
+        <div class="diagram-component-block"><img src="images/p-logo.svg"></div>
+        <div class="diagram-component-block"><img src="images/webcomponents.svg"></div>
+
     </slide-content>
     <slide-content>
         <div class="flex-container">
