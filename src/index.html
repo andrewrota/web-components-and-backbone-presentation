@@ -285,7 +285,7 @@ s.innerHTML += '&lt;content select=".name"&gt;&lt;/content&gt;!';
     </slide-content>
     <slide-content>
         <div class="flex-container">
-            <h1 class="flex-center half-width">Web Component Technologies<br>+<br>Backbone</h1>
+            <h1 class="flex-center half-width">Using Web Component Technologies<br>+<br>Backbone</h1>
         </div>
     </slide-content>
     <slide-content>
@@ -318,64 +318,40 @@ s.innerHTML += '&lt;content select=".name"&gt;&lt;/content&gt;!';
   }
 });</code-prism>
     </slide-content>
-    <slide-content class="">
-        <br><br>
-        <img class="full-width-image" src="images/mapsapp.gif" alt="" data-reset>
-    </slide-content>
     <slide-content>
         <div class="flex-container">
-            <h1 class="flex-center half-width">Web Component Technologies<br>+<br>Backbone</h1>
+            <h1 class="flex-center half-width">Using Web Component Technologies<br>+<br>Backbone</h1>
         </div>
     </slide-content>
     <slide-content>
         <div class="flex-container">
-            <h1 class="flex-center half-width">Web Components<br>+<br>Backbone</h1>
+            <h1 class="flex-center half-width">Using Web Components<br>+<br>Backbone</h1>
         </div>
     </slide-content>
     <slide-content>
-        <h1><code>&lt;google-map&gt;</code></h1>
+        <h1>polymer-project.org/docs/elements</h1>
         <br>
-        <img class="full-width-image" src="images/googlemap.gif" alt="" data-reset>
+        <img class="full-width-image" src="images/polymerproject.png" alt="">
     </slide-content>
-     <slide-content>
-         <div class="flex-container">
-            <code-prism class="flex-center" language="markup">&lt;google-map
-  zoom=&quot;10&quot;
-  latitude=&quot;42.3581&quot;
-  longitude=&quot;-71.0636&quot;
-&gt;&lt;/google-map&gt;</code-prism>
-        </div>
+    <slide-content>
+        <h1>x-tags.org</h1>
+        <br>
+        <img class="full-width-image" src="images/xtags.gif" alt="" data-reset>
+    </slide-content>
+    <slide-content>
+        <h1>component.kitchen</h1>
+        <br>
+        <img class="full-width-image" src="images/componentkitchen.gif" alt="" data-reset>
+    </slide-content>
+    <slide-content>
+        <h1>customelements.io</h1>
+        <br>
+        <img class="full-width-image" src="images/customelementsio.gif" alt="" data-reset>
     </slide-content>
     <slide-content>
         <div class="flex-container">
-            <code-prism class="flex-center">Backbone.View.extend({
-  tagName: 'google-map',
-  attributes: {
-    latitude: '42.3581',
-    longitude: '-71.0636'
-    zoom: '10'
-  }
-});</code-prism>
+            <h1 class="flex-center half-width">Backbone View<br>+<br>Web Component</h1>
         </div>
-    </slide-content>
-    <slide-content>
-        <div class="flex-container">
-            <code-prism class="flex-center">Backbone.View.extend({
-  initialize: function() {
-    this.listenTo(this.model, 'change', _.bind(this.moveMap, this));
-  },
-  moveMap: function(model) {
-    this.el.setAttribute('latitude', this.model.get('lat'));
-    this.el.setAttribute('longitude', this.model.get('long'));
-    this.el.setAttribute('zoom', this.model.get('zoom'));
-  },
-  tagName: 'google-map'
-});</code-prism>
-        </div>
-    </slide-content>
-    <slide-content class="">
-        <br><br>
-        <img class="full-width-image" src="images/mapsapp.gif" alt="" data-reset>
     </slide-content>
 <!--     <slide-content>
         <h1>Know Your API</h1>
@@ -389,18 +365,92 @@ s.innerHTML += '&lt;content select=".name"&gt;&lt;/content&gt;!';
         <img class="full-width-image" src="images/toast.gif" alt="" data-reset>
     </slide-content>
     <slide-content>
-        <h1>Know Your API</h1>
+        <h1><code>&lt;paper-toast&gt;</code> API</h1>
             <code-prism class="flex-center" language="markup">&lt;paper-toast
   text="Your toast is ready!"
   duration="5000"
   autoCloseDisabled
+  opened
 &gt;&lt;/paper-toast&gt;</code-prism>
             <code-prism class="flex-center">Element.show();
 Element.dismiss();
 Element.toggle();</code-prism>
         <code-prism class="flex-center">Element.addEventListener('core-overlay-open-completed', doSomething);</code-prism>
     </slide-content>
-     <slide-content>
+    <slide-content>
+        <div class="flex-container">
+            <code-prism class="flex-center">Backbone.View.extend({
+  tagName: 'paper-toast',
+  attributes: {
+    text: 'Your toast is ready!',
+    autoCloseDisabled: true,
+    duration: '5000',
+    opened: true
+  },
+  events: {
+    'core-overlay-open-completed': 'doSomething'
+  },
+  toggle: function() {
+    this.el.toggle();
+  }
+});</code-prism>
+        </div>
+    </slide-content>
+    
+    <slide-content>
+        <h1><code>&lt;google-map&gt;</code></h1>
+        <br>
+        <img class="full-width-image" src="images/googlemap.gif" alt="" data-reset>
+    </slide-content>
+    <slide-content>
+        <h1><code>&lt;google-map&gt;</code> API</h1>
+            <code-prism class="flex-center" language="markup">&lt;google-map
+  zoom=&quot;10&quot;
+  latitude=&quot;42.3581&quot;
+  longitude=&quot;-71.0636&quot;
+&gt;&lt;/google-map&gt;;</code-prism>
+            <code-prism class="flex-center">Element.resize();
+Element.clear();</code-prism>
+        <code-prism class="flex-center">Element.addEventListener('google-map-ready', doSomething);</code-prism>
+    </slide-content>
+    <slide-content>
+        <div class="flex-container">
+            <code-prism class="flex-center">Backbone.View.extend({
+  tagName: 'google-map',
+  attributes: {
+    latitude: '42.3581',
+    longitude: '-71.0636'
+    zoom: '10'
+  },
+  events: {
+    'google-map-ready': 'doSomething'
+  },
+  resize: function() {
+    this.el.resize();
+  }
+});</code-prism>
+        </div>
+    </slide-content>
+    <slide-content>
+        <div class="flex-container">
+            <code-prism class="flex-center">Backbone.View.extend({
+  initialize: function() {
+    this.listenTo(this.model, 'change', _.bind(this.moveMap, this));
+  },
+  tagName: 'google-map',
+  moveMap: function(model) {
+    this.el.setAttribute('latitude', this.model.get('lat'));
+    this.el.setAttribute('longitude', this.model.get('long'));
+    this.el.setAttribute('zoom', this.model.get('zoom'));
+  }
+});</code-prism>
+        </div>
+    </slide-content>
+    <slide-content class="">
+        <br><br>
+        <img class="full-width-image" src="images/mapsapp.gif" alt="" data-reset>
+    </slide-content>
+<!--      <slide-content>
         <h1><code>&lt;github-card&gt;</code></h1>
         <h4>By @pazguille</h4>
         <br>
@@ -415,21 +465,67 @@ Element.toggle();</code-prism>
         <h1><code>&lt;x-slidemenu&gt;</code></h1>
         <br>
         <img class="full-width-image" src="images/x-slidemenu.gif" alt="" data-reset>
+    </slide-content> -->
+    <slide-content>
+        <div class="flex-container">
+            <div class="flex-center">
+                <h1>Building Web Components<br>for Backbone (or anything else)</h1>
+            </div>
+        </div>
     </slide-content>
     <slide-content>
-            <h1>Web Component All the Things??</h1>
-            <code-prism language="markup">&lt;backboneconf-app&gt;
-    &lt;backboneconf-menu&gt;&lt;/backboneconf-menu&gt;
-    &lt;backboneconf-content&gt;&lt;/backboneconf-content&gt;
-    &lt;backboneconf-footer&gt;&lt;/backboneconf-footer&gt;
-&lt;/backboneconf-app&gt;</code-prism>
+        <div class="flex-container">
+            <code-prism class="flex-center">├── hello-world
+├──── hello-world.html
+├──── hello-world.js
+└──── bower.json
+            </code-prism>
+        </div>
     </slide-content>
-        <slide-content>
-            <h1>Probably Not (and that's OK)</h1>
-            <blockquote>
-                I don't ever see us going all in on Custom Elements for every possible thing <small>...</small> <strong>Use native elements and controls when possible and supplement with custom elements</strong>. <br><span class="attr"><a href="http://webcomponents.org/articles/interview-with-joshua-peek/" target="_blank">- Joshua Peek, Github Programmer</a></span>
-            </blockquote>
-        </slide-content>
+    <slide-content>
+    <div class="flex-container">
+            <code-prism language="markup" class="flex-center">&lt;template id=&quot;my-template&quot;&gt;
+  Hello, &lt;content&gt;&lt;/content&gt;!
+&lt;/template&gt;
+&lt;script src=&quot;hello-world.js&quot;&gt;</code-prism>
+        </div>
+    </slide-content>
+    <slide-content>
+    <div class="flex-container">
+            <code-prism class="flex-center">var element = Object.create(HTMLElement.prototype);
+
+element.createdCallback = function() {};
+
+element.attachedCallback = function() {};
+
+element.attributeChangedCallback = function(attr, oldVal, newVal) {};
+
+element.detachedCallback = function() {};
+
+document.registerElement('hello-world', {
+  prototype: element
+});</code-prism>
+        </div>
+    </slide-content>
+    <slide-content>
+    <div class="flex-container">
+            <code-prism class="flex-center" language="markup">&lt;link
+  rel=&quot;import&quot;
+  href=&quot;components/hello-world/hello-world.html&quot;
+&gt;
+
+&lt;!-- [...] --&gt;
+
+&lt;hello-world&gt;I&#39;m a web component&lt;/hello-world&gt;</code-prism>
+        </div>
+    </slide-content>
+    <slide-content>
+        <div class="flex-container">
+            <div class="flex-center">
+                <h1>How It All Fits Together</h1>
+            </div>
+        </div>
+    </slide-content>
     <slide-content>
         <h1>Application + Components</h1>
         <br><br>
@@ -458,6 +554,30 @@ Element.toggle();</code-prism>
 
         <div class="diagram-application-block"><img src="images/backbone.svg"></div>
 
+        <div class="diagram-component-block"><img src="images/backbone.svg"></div>
+        <div class="diagram-component-block"><img src="images/backbone.svg"></div>
+        <div class="diagram-component-block"><img src="images/backbone.svg"></div>
+        <div class="diagram-component-block"><img src="images/backbone.svg"></div>
+        <div class="diagram-component-block"><img src="images/backbone.svg"></div>
+        <div class="diagram-component-block"><img src="images/backbone.svg"></div>
+
+        <div class="diagram-component-block"><img src="images/backbone.svg"></div>
+        <div class="diagram-component-block"><img src="images/backbone.svg"></div>
+        <div class="diagram-component-block"><img src="images/backbone.svg"></div>
+        <div class="diagram-component-block"><img src="images/backbone.svg"></div>
+        <div class="diagram-component-block"><img src="images/backbone.svg"></div>
+
+        <div class="diagram-component-block"><img src="images/backbone.svg"></div>
+        <div class="diagram-component-block"><img src="images/backbone.svg"></div>
+        <div class="diagram-component-block"><img src="images/backbone.svg"></div>
+        <div class="diagram-component-block"><img src="images/backbone.svg"></div>
+    </slide-content>
+    <slide-content>
+        <h1>Application + Components</h1>
+        <br><br>
+
+        <div class="diagram-application-block"><img src="images/backbone.svg"></div>
+
         <div class="diagram-component-block"><img src="images/webcomponents.svg"></div>
         <div class="diagram-component-block"><img src="images/webcomponents.svg"></div>
         <div class="diagram-component-block"><img src="images/webcomponents.svg"></div>
@@ -499,73 +619,31 @@ Element.toggle();</code-prism>
         <div class="diagram-component-block"><img src="images/backbone.svg"></div>
         <div class="diagram-component-block"><img src="images/p-logo.svg"></div>
         <div class="diagram-component-block"><img src="images/webcomponents.svg"></div>
-
     </slide-content>
     <slide-content>
-        <div class="flex-container">
-            <div class="flex-center">
-                <h1>Building Web Components<br>for Backbone (or anything else)</h1>
-            </div>
-        </div>
+            <h1>Web Component All the Things??</h1>
+            <code-prism language="markup">&lt;backboneconf-app&gt;
+    &lt;backboneconf-menu&gt;&lt;/backboneconf-menu&gt;
+    &lt;backboneconf-content&gt;&lt;/backboneconf-content&gt;
+    &lt;backboneconf-footer&gt;&lt;/backboneconf-footer&gt;
+&lt;/backboneconf-app&gt;</code-prism>
     </slide-content>
-    <slide-content>
-        <div class="flex-container">
-            <code-prism class="flex-center">├── hello-world
-    ├── hello-world.html
-    ├── hello-world.js
-    ├── hello-world.css*
-    └── bower.json
-            </code-prism>
-        </div>
-    </slide-content>
-    <slide-content>
-    <div class="flex-container">
-            <code-prism language="markup" class="flex-center">&lt;template id=&quot;my-template&quot;&gt;
-  Hello, &lt;content&gt;&lt;/content&gt;!
-&lt;/template&gt;
-&lt;script src=&quot;hello-world.js&quot;&gt;</code-prism>
-        </div>
-    </slide-content>
-    <slide-content>
-        <h1>Lifecycle Methods</h1>
-        <h2>createdCallback</h2>
-        <h2>attachedCallback</h2>
-        <h2>attributeChangedCallback</h2>
-        <h2>detachedCallback</h2>
-    </slide-content>
-    <slide-content>
-    <div class="flex-container">
-            <code-prism class="flex-center">var element = Object.create(HTMLElement.prototype);
-
-element.attachedCallback = function() {};
-
-element.attributeChangedCallback = function(attr, oldVal, newVal) {};
-
-element.detachedCallback = function() {};
-
-document.registerElement('hello-world', {
-  prototype: element
-});</code-prism>
-        </div>
-    </slide-content>
-    <slide-content>
-    <div class="flex-container">
-            <code-prism class="flex-center">&lt;link
-  rel=&quot;import&quot;
-  href=&quot;components/hello-world/hello-world.html&quot;
-&gt;
-
-&lt;!-- [...] --&gt;
-
-&lt;hello-world&gt;I&#39;m a web component&lt;/hello-world&gt;</code-prism>
-        </div>
-    </slide-content>
+        <slide-content>
+            <h1>Probably Not (and that's OK)</h1>
+            <blockquote>
+                I don't ever see us going all in on Custom Elements for every possible thing <small>...</small> <strong>Use native elements and controls when possible and supplement with custom elements</strong>. <br><span class="attr"><a href="http://webcomponents.org/articles/interview-with-joshua-peek/" target="_blank">- Joshua Peek, Github Programmer</a></span>
+            </blockquote>
+        </slide-content>
     <slide-content>
         <h1>Should I Componentize?</h1><br>
         <div style="margin-left: 25px;">
         <core-label horizontal="" layout="" id="core-label-2">
              <paper-checkbox for="" role="checkbox" tabindex="0" aria-checked="false" aria-labelledby="core-label-2"></paper-checkbox>
              <h4>Does it encapsulate component-level logic?</h4>
+        </core-label><br>
+        <core-label horizontal="" layout="" id="core-label-2">
+             <paper-checkbox for="" role="checkbox" tabindex="0" aria-checked="false" aria-labelledby="core-label-2"></paper-checkbox>
+             <h4>Does it take the place of a native element?</h4>
         </core-label><br>
         <core-label horizontal="" layout="" id="core-label-2">
              <paper-checkbox for="" role="checkbox" tabindex="0" aria-checked="false" aria-labelledby="core-label-2"></paper-checkbox>
@@ -642,10 +720,53 @@ document.registerElement('hello-world', {
             </table>
         </slide-content>
     <slide-content>
-        <div class="flex-container">
-            <h1 class="flex-center">webcomponents.js</h1>
-        </div>
-    </slide-content>
+            <h1>Can I Use???</h1>
+            <table class="browser-table">
+                <tr>
+                    <th></th>
+                    <th>Custom Elements</th>
+                    <th>HTML Templates</th>
+                    <th>HTML Imports</th>
+                    <th>Shadow DOM</th>
+                </tr>
+                <tr>
+                    <td><img src="../bower_components/chrome-logo/index.png"></td>
+                    <td class="yes">&#10003;</td>
+                    <td class="yes">&#10003;</td>
+                    <td class="yes">&#10003;</td>
+                    <td class="yes">&#10003;</td>
+                </tr>
+                <tr>
+                    <td><img src="../bower_components/opera-logo/index.png"></td>
+                    <td class="yes">&#10003;</td>
+                    <td class="yes">&#10003;</td>
+                    <td class="yes">&#10003;</td>
+                    <td class="yes">&#10003;</td>
+                </tr>
+                <tr>
+                    <td><img src="../bower_components/firefox-logo/index.png"></td>
+                    <td class="yes">&#10003;</td>
+                    <td class="yes">&#10003;</td>
+                    <td class="yes">&#10003;</td>
+                    <td class="yes">&#10003;</td>
+                </tr>
+                <tr>
+                    <td><img src="../bower_components/safari-logo/index.png"></td>
+                    <td class="yes">&#10003;</td>
+                    <td class="yes">&#10003;</td>
+                    <td class="yes">&#10003;</td>
+                    <td class="yes">&#10003;</td>
+                </tr>
+                <tr>
+                    <td><img src="../bower_components/ie-logo/index.png"></td>
+                    <td class="yes">&#10003;</td>
+                    <td class="yes">&#10003;</td>
+                    <td class="yes">&#10003;</td>
+                    <td class="yes">&#10003;</td>
+                </tr>
+            </table>
+        <h1 class="title-heading">webcomponents.js</h1>
+        </slide-content>
     <slide-content>
         <div class="flex-container">
             <h1 class="flex-center">Towards a Component Driven Web</h1>
