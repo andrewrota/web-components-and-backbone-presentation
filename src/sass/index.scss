@@ -37,6 +37,7 @@ strong.emphasize {
 .title-logo {
     height: 20%;
     margin: 5%;
+    text-align: initial;
 }
 
 .title-logo-container {
@@ -334,6 +335,19 @@ paper-input {
     max-width: 14%;
     margin: 1em;
     max-height: 25vh;
+}
+
+.profile-image {
+	width: 200px;
+	height: 200px;
+    float: right;
+    margin-right: 25%;
+	border-radius: 100px;
+	-webkit-border-radius: 100px;
+	background: url(../images/rota.jpg) no-repeat;
+    background-size: contain;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
 }
 
 .small-list {
