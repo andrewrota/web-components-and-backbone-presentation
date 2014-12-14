@@ -88,7 +88,7 @@ if(!Backbone.history.start()) {
     for (var i = particleObjects.length; i--; ) {
       particleObjects[i].tick();
     }
-    requestAnimationFrame(tick);
+    window.animation = requestAnimationFrame(tick);
   };
   requestAnimationFrame(tick);
 })();

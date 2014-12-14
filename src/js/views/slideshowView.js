@@ -21,6 +21,9 @@ var SlideshowView = Backbone.View.extend({
         window.model = this.model;
     },
     goToSlide(slideIndex) {
+        if(slideIndex !== 0) {
+         window.cancelAnimationFrame(window.animation);
+        }
         this.slideViews.forEach(slideView => {
             slideView.hide();
         });
