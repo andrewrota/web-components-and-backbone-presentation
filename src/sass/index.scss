@@ -30,20 +30,39 @@ strong.emphasize {
     height: 40%;
 }
 
+.title-heading {
+    text-align: center;
+}
+
+.title-logo {
+    height: 20%;
+    margin: 5%;
+}
+
+.title-logo-container {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
 .animated-container {
     position: relative;
 }
 
 .diagram-component-block, .diagram-application-block {
     line-height: 10vh;
+    height: 10vh;
     vertical-align: middle;
     margin-top: 1vh;
     margin-bottom: 1vh;
     img {
+        box-sizing: border-box;
         height: 10vh;
+        padding-top: 5px;
+        padding-bottom: 5px;
         vertical-align: middle;
-        margin-top: 5px;
-        margin-bottom: 5px;
+        display: block;
+        margin: 0 auto;
     }
 }
 
@@ -382,6 +401,7 @@ slide-content {
     background: $primary;
     box-sizing: border-box;
     padding-left: 25px;
+    padding-right: 25px;
     height: 100vh;
     width: 100%;
     position: absolute;
@@ -400,12 +420,8 @@ slide-content .sub-title {
 
 
 .title-slide, .center-slide {
-    padding-top: 30vh;
+    padding-top: 10vh;
     text-align: center;
-    padding-left: 0;
-    h2 {
-        margin-left: 0;
-    }
 }
 .slideshow {
 
