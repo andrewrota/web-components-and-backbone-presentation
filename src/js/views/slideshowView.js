@@ -7,6 +7,8 @@ const LEFT_KEY_CODE = 37;
 const UP_KEY_CODE = 38;
 const DOWN_KEY_CODE = 40;
 const SPACE_KEY_CODE = 32;
+const PAGE_UP_KEY_CODE = 33;
+const PAGE_DOWN_KEY_CODE = 34;
 
 var SlideshowView = Backbone.View.extend({
     initialize() {
@@ -31,9 +33,9 @@ var SlideshowView = Backbone.View.extend({
         this.goToSlide(slideIndex);
     },
     handleKeydown(e) {
-        if(e.which === RIGHT_KEY_CODE || e.which === DOWN_KEY_CODE || e.which === SPACE_KEY_CODE) {
+        if(e.which === RIGHT_KEY_CODE || e.which === DOWN_KEY_CODE || e.which === SPACE_KEY_CODE || e.which === PAGE_DOWN_KEY_CODE) {
             this.model.set({'slideIndex':  parseInt(this.model.get('slideIndex'), 10) + 1}, {validate:true});
-        } else if(e.which === LEFT_KEY_CODE || e.which === UP_KEY_CODE) {
+        } else if(e.which === LEFT_KEY_CODE || e.which === UP_KEY_CODE || e.which === PAGE_UP_KEY_CODE) {
             this.model.set({'slideIndex': parseInt(this.model.get('slideIndex'), 10) - 1}, {validate:true});
         }
     },
