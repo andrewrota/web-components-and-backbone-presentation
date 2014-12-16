@@ -11,9 +11,7 @@
     <link rel="import" href="../bower_components/paper-checkbox/paper-checkbox.html">
     <link rel="import" href="../bower_components/core-label/core-label.html">
     <link rel="import" href="../bower_components/github-card/webcomponent/github-card.html">
-    <link href='//fonts.googleapis.com/css?family=Lato:100,300|Muli|Open+Sans' rel='stylesheet' type='text/css'>
-    <link href='//fonts.googleapis.com/css?family=Mr+Dafoe|Engagement' rel='stylesheet' type='text/css'>
-    <link href='//fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Lato:100,300|Muli|Open+Sans|Righteous|Mr+Dafoe|Engagement' rel='stylesheet' type='text/css'>
 </head>
 <body>
 <div class="slideshow">
@@ -278,10 +276,17 @@ s.innerHTML += '&lt;content select=".name"&gt;&lt;/content&gt;!';
             <script>(function(){var s = document.getElementById('another-element').createShadowRoot();s.innerHTML += '<content select=".greeting"></content>, '; s.innerHTML += '<content select=".name"></content>!';}());</script>
         </slide-content> -->
     <slide-content>
+            <h1>Web Component Technologies</h1>
+            <h2>Custom Elements</h2>
+            <h2>HTML Templates</h2>
+            <h2>HTML Imports</h2>
+            <h2><strong>Shadow DOM</strong></h2>
+    </slide-content>
+    <slide-content>
         <h1>What Web Components Lack...</h1>
             <h2><strike>Application Structure</strike></h2>
             <h2><strike>Server Interface</strike></h2>
-            <h2><strike>DOM Event Handling</strike></h2>
+            <h2><strike>URL Router</strike></h2>
             <h2><strike>Models/Collections + Events</strike></h2>
         <h2></h2>
     </slide-content>
@@ -289,7 +294,7 @@ s.innerHTML += '&lt;content select=".name"&gt;&lt;/content&gt;!';
         <h1>...We Gain with Backbone</h1>
         <h2>Application Structure</h2>
         <h2>Server Interface</h2>
-        <h2>DOM Event Handling</h2>
+        <h2>URL Router</h2>
         <h2>Models/Collections + Events</h2>
         <h2></h2>
     </slide-content>
@@ -300,7 +305,11 @@ s.innerHTML += '&lt;content select=".name"&gt;&lt;/content&gt;!';
     </slide-content>
     <slide-content>
         <h1>Backbone + Custom Elements</h1>
-        <code-prism>Backbone.View.extend({
+        <code-prism>document.registerElement('my-custom-element', {
+  prototype: Object.create(HTMLElement.prototype)
+});
+
+Backbone.View.extend({
   tagName: 'my-custom-element'
 });</code-prism>
     </slide-content>
