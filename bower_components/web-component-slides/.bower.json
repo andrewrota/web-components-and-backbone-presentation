@@ -1,0 +1,26 @@
+{
+  "name": "web-component-slides",
+  "homepage": "https://github.com/andrewrota/web-component-slides",
+  "authors": [
+    "Andrew Rota <rota.andrew@gmail.com>"
+  ],
+  "description": "A simple slideshow library built with web components.",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "devDependencies": {
+    "warpech-prism": "git://github.com/andrewrota//warpech-prism.git#master"
+  },
+  "_release": "46fd749c25",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "46fd749c25b06b7558a28db598d51db7ddfc0e02"
+  },
+  "_source": "git://github.com/andrewrota/web-component-slides.git",
+  "_target": "master",
+  "_originalSource": "git://github.com/andrewrota/web-component-slides.git"
+}

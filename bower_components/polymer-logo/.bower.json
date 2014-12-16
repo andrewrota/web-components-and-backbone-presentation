@@ -1,0 +1,12 @@
+{
+  "name": "polymer-logo",
+  "_cacheHeaders": {
+    "ETag": "\"WT7P7g\"",
+    "Content-Type": "image/svg+xml"
+  },
+  "_release": "e-tag:WT7P7g",
+  "main": "index.svg",
+  "_source": "https://www.polymer-project.org/images/logos/p-logo.svg",
+  "_target": "*",
+  "_originalSource": "https://www.polymer-project.org/images/logos/p-logo.svg"
+}

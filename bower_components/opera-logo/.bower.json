@@ -1,0 +1,13 @@
+{
+  "name": "opera-logo",
+  "_cacheHeaders": {
+    "ETag": "\"a25044638a3ab9d5aa3c0dbe3ec8246259fe0785\"",
+    "Content-Length": "11968",
+    "Content-Type": "image/png"
+  },
+  "_release": "e-tag:a25044638",
+  "main": "index.png",
+  "_source": "https://raw.githubusercontent.com/alrra/browser-logos/master/opera/opera_128x128.png",
+  "_target": "*",
+  "_originalSource": "https://raw.githubusercontent.com/alrra/browser-logos/master/opera/opera_128x128.png"
+}

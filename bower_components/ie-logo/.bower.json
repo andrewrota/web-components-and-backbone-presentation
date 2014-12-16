@@ -1,0 +1,13 @@
+{
+  "name": "ie-logo",
+  "_cacheHeaders": {
+    "ETag": "\"473c46650144743ef35735a37316414d8e1e5e15\"",
+    "Content-Length": "16972",
+    "Content-Type": "image/png"
+  },
+  "_release": "e-tag:473c46650",
+  "main": "index.png",
+  "_source": "https://raw.githubusercontent.com/alrra/browser-logos/master/internet-explorer/internet-explorer_128x128.png",
+  "_target": "*",
+  "_originalSource": "https://raw.githubusercontent.com/alrra/browser-logos/master/internet-explorer/internet-explorer_128x128.png"
+}

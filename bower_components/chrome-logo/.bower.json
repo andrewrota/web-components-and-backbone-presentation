@@ -1,0 +1,13 @@
+{
+  "name": "chrome-logo",
+  "_cacheHeaders": {
+    "ETag": "\"816e11d204e1099d274eaac65aa1affeba7028bf\"",
+    "Content-Length": "13302",
+    "Content-Type": "image/png"
+  },
+  "_release": "e-tag:816e11d20",
+  "main": "index.png",
+  "_source": "https://raw.githubusercontent.com/alrra/browser-logos/master/chrome/chrome_128x128.png",
+  "_target": "*",
+  "_originalSource": "https://raw.githubusercontent.com/alrra/browser-logos/master/chrome/chrome_128x128.png"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "firefox-logo",
+  "_cacheHeaders": {
+    "ETag": "\"74f55c158279c73500ced4850a04153b1558f297\"",
+    "Content-Length": "20609",
+    "Content-Type": "image/png"
+  },
+  "_release": "e-tag:74f55c158",
+  "main": "index.png",
+  "_source": "https://raw.githubusercontent.com/alrra/browser-logos/master/firefox/firefox_128x128.png",
+  "_target": "*",
+  "_originalSource": "https://raw.githubusercontent.com/alrra/browser-logos/master/firefox/firefox_128x128.png"
+}

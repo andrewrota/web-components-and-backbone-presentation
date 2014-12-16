@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>warpech-prism</title>
+  <link rel="import" href="code-prism.html">
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+  </style>
+</head>
+<body>
+
+<h1><a href="https://github.com/warpech/warpech-prism">warpech-prism</a></h1>
+
+<p>For API see the <a href="https://github.com/warpech/warpech-prism">README.md</a></p>
+
+<h2>Sample usage</h2>
+
+<p>Hightlights the code of warpech-prism itself!</p>
+
+<code-prism language="markup" theme="okaidia">
+&lt;script data-manual src=&quot;../prism.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+  (function (global) {
+    var WarpechPrismPrototype = Object.create(HTMLElement.prototype);
+    WarpechPrismPrototype.attributeChangedCallback = function (attributeName, oldVal, newVal) {
+      if (attributeName == &quot;language&quot;) {
+        var code = this.shadowRoot.querySelector(&quot;code&quot;);
+        code.setAttribute(&quot;class&quot;, &quot;language-&quot; + (this.getAttribute(&quot;language&quot;) || &quot;javascript&quot;));
+        Prism.highlightElement(code, false);
+      }
+    };
+    WarpechPrismPrototype.createdCallback = function () {
+      var pre = document.createElement(&quot;PRE&quot;);
+
+      var code = document.createElement(&quot;CODE&quot;);
+      code.setAttribute(&quot;class&quot;, &quot;language-&quot; + (this.getAttribute(&quot;language&quot;) || &quot;javascript&quot;));
+      code.innerHTML = this.innerHTML;
+
+      var style = document.createElement(&quot;STYLE&quot;);
+      var theme = this.getAttribute(&quot;theme&quot;);
+      var themeFile = theme ? &quot;prism-&quot; + theme + &quot;.css&quot; : &quot;prism.css&quot;;
+      style.textContent = &quot;@import url('http://rawgithub.com/LeaVerou/prism/gh-pages/themes/&quot; + themeFile + &quot;');&quot;;
+
+      var shadowRoot = this.createShadowRoot();
+      shadowRoot.appendChild(style);
+      pre.appendChild(code);
+      shadowRoot.appendChild(pre);
+
+      Prism.highlightElement(code, false);
+    };
+
+    global.WarpechPrismElement = document.registerElement('code-prism', {
+      prototype: WarpechPrismPrototype
+    });
+  })(window);
+&lt;/script&gt;
+</code-prism>
+
+</body>
+</html>

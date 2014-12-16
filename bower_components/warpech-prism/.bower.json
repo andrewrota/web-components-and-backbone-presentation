@@ -1,0 +1,22 @@
+{
+  "name": "code-prism",
+  "main": [
+    "warpech-prism.html"
+  ],
+  "dependencies": {
+    "prism": "gh-pages"
+  },
+  "keywords": [
+    "web-components"
+  ],
+  "homepage": "https://github.com/andrewrota/warpech-prism",
+  "_release": "88f304bacf",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "88f304bacff5663dd1c709bb4b2d38a90806443f"
+  },
+  "_source": "git://github.com/andrewrota/warpech-prism.git",
+  "_target": "master",
+  "_originalSource": "git://github.com/andrewrota/warpech-prism.git"
+}

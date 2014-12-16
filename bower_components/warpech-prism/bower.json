@@ -1,0 +1,11 @@
+{
+  "name": "code-prism",
+  "version": "0.2.0",
+  "main": ["warpech-prism.html"],
+  "dependencies": {
+    "prism": "gh-pages"
+  },
+  "keywords": [
+    "web-components"
+  ]
+}

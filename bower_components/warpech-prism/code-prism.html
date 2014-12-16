@@ -1,0 +1,36 @@
+<script data-manual src="../prism/prism.js"></script>
+<script>
+  (function (global) {
+    var CodePrismPrototype = Object.create(HTMLElement.prototype);
+    CodePrismPrototype.attributeChangedCallback = function (attributeName, oldVal, newVal) {
+      if (attributeName == "language") {
+        var code = this.shadowRoot.querySelector("code");
+        code.setAttribute("class", "language-" + (this.getAttribute("language") || "javascript"));
+        Prism.highlightElement(code, false);
+      }
+    };
+    CodePrismPrototype.createdCallback = function () {
+      var pre = document.createElement("PRE");
+
+      var code = document.createElement("CODE");
+      code.setAttribute("class", "language-" + (this.getAttribute("language") || "javascript"));
+      code.innerHTML = this.innerHTML;
+
+      var style = document.createElement("STYLE");
+      var theme = this.getAttribute("theme");
+      var themeFile = theme ? "prism-" + theme + ".css" : "prism.css";
+      style.textContent = "@import url('../bower_components/prism/themes/" + themeFile + "');";
+
+      var shadowRoot = this.createShadowRoot();
+      shadowRoot.appendChild(style);
+      pre.appendChild(code);
+      shadowRoot.appendChild(pre);
+
+      Prism.highlightElement(code, false);
+    };
+
+    global.CodePrismElement = document.registerElement('code-prism', {
+      prototype: CodePrismPrototype
+    });
+  })(window);
+</script>

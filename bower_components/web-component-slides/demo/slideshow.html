@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Web Component Slides</title>
+    <link rel="import" href="../dist/slide-content.html">
+    <link rel="import" href="../dist/slide-show.html">
+    <link rel="import" href="../bower_components/warpech-prism/code-prism.html">
+    <link rel="stylesheet" href="slideshow.css" type="text/css" />
+</head>
+
+<body>
+    <slide-show>
+        <slide-content>
+            <div class="title-block">
+                <h1>Hello World</h1>
+                <h2>A web components presentation</h2>
+            </div>
+        </slide-content>
+        <slide-content>
+            <h1>Outline</h1>
+            <ul>
+                <li>Lorem Ipsum 1</li>
+                <li>Lorem Ipsum 2</li>
+                <li>Lorem Ipsum 3</li>
+                <li>Lorem Ipsum 4</li>
+                <li>Lorem Ipsum 5</li>
+            </ul>
+        </slide-content>
+        <slide-content>
+            <img src="../bower_components/Sorting_quicksort_anim/index.gif" alt="" class="gif" data-reset>
+            <a class="attr" href="http://en.wikipedia.org/wiki/File:Sorting_quicksort_anim.gif"><small>Image by RolandH.</small></a>
+        </slide-content>
+        <slide-content>
+            <h1>Code</h1>
+            <code-prism language="css">
+.css1 { color: blue; font-size: 150%; }
+            </code-prism>
+        </slide-content>
+    </slide-show>
+    <script type="text/javascript">
+        document.querySelector('slide-show').initialize()
+    </script>
+</body>
+
+</html>
