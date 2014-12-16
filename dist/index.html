@@ -1,0 +1,809 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Components + Backbone</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="import" href="../bower_components/web-component-slides/dist/slide-content.html">
+    <link rel="import" href="../bower_components/warpech-prism/code-prism.html">
+    <link rel="import" href="../bower_components/paper-toast/paper-toast.html">
+    <link rel="import" href="../bower_components/google-map/google-map.html">
+    <link rel="import" href="../bower_components/paper-checkbox/paper-checkbox.html">
+    <link rel="import" href="../bower_components/core-label/core-label.html">
+    <link rel="import" href="../bower_components/github-card/webcomponent/github-card.html">
+    <link href='//fonts.googleapis.com/css?family=Lato:100,300|Muli|Open+Sans|Righteous|Mr+Dafoe|Engagement' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<div class="slideshow">
+     <slide-content class="animated-container">
+            <img class="animated-object" src="images/webcomponents.svg" />
+            <img class="animated-object" src="images/backbone.svg" />
+    </slide-content>
+    <slide-content class="title-slide">
+        <div class="title-logo-container">
+            <img class="title-logo" src="images/webcomponents.svg" />
+            <img class="title-logo" src="images/backbone.svg" />
+        </div>
+        <h1 class="title-heading">Web Components + Backbone<br>A Game-Changing Combination</h1>
+    </slide-content>
+    <slide-content>
+        <h1>Who Am I?</h1>
+        <!-- <div class="profile-image"></div> -->
+<!--         <h2 style="margin-bottom: 0;">@<span style="color: #8D4377">andrew</span>rota</h2> -->
+        <h2 style="margin-bottom: 0;">Andrew Rota</h2>
+        <div style="margin-left: 20px; margin-bottom: 10vh;">
+            <h3 style="display: inline-block; vertical-align: middle; margin: 0; line-height: 50px;">JavaScript Engineer,</h3>
+            <img style="display: inline-block; vertical-align: middle; margin: 0; margin-top: -12px" src="images/wflogo.png" alt="">
+        </div>
+            <img style="height: 25%; margin-left: 20px; margin-right: 5%;" src="images/js.svg" alt="">
+        <img style="height: 25%; margin-right: 5%;" src="images/html5.svg" alt="">
+            <img style="height: 25%; margin-right: 5%;" src="images/backbone.svg" alt="">
+    </slide-content>
+    <slide-content>
+        <h1>JavaScript Modularity</h1>
+        <blockquote>
+            By using small libraries – components with a <strong>dedicated purpose</strong> and a <strong>small surface area</strong> – it becomes possible to pick and mix, to swap parts of our front end stack... <span class="attr"><a href="http://www.breck-mckye.com/blog/2014/12/the-state-of-javascript-in-2015/" target="_blank">- Jimmy Breck-McKye, "The State of JavaScript in 2015"</a></span>
+        </blockquote>
+    </slide-content>
+    <slide-content>
+        <h1>Modularity in HTML == DOM Elements</h1>
+        <img style="display: block; margin: 5% auto; width: 25%;" src="images/html5.svg" alt="">
+    </slide-content>
+    <slide-content>
+        <div class="flex-container">
+            <code-prism class="flex-center" language="markup">&lt;ul&gt;
+  &lt;li&gt;First Item&lt;/li&gt;
+  &lt;li&gt;Second Item&lt;/li&gt;
+&lt;/ul&gt;</code-prism>
+        </div>
+    </slide-content>
+    <slide-content>
+        <div class="flex-container">
+            <code-prism class="flex-center" language="markup">&lt;ol&gt;
+  &lt;li&gt;First Item&lt;/li&gt;
+  &lt;li&gt;Second Item&lt;/li&gt;
+&lt;/ol&gt;</code-prism>
+        </div>
+    </slide-content>
+    <slide-content>
+        <div class="flex-container">
+            <code-prism class="flex-center" language="markup">&lt;div class=&quot;header&quot;&gt;&lt;/div&gt;</code-prism>
+        </div>
+    </slide-content>
+    <slide-content>
+        <div class="flex-container">
+            <code-prism class="flex-center" language="markup">&lt;header&gt;&lt;/header&gt;</code-prism>
+        </div>
+    </slide-content>
+    <slide-content>
+        <div class="flex-container">
+            <code-prism class="flex-center" language="markup">&lt;div id=&quot;nav&quot;&gt;&lt;/div&gt;</code-prism>
+        </div>
+    </slide-content>
+    <slide-content>
+        <div class="flex-container">
+            <code-prism class="flex-center" language="markup">&lt;nav&gt;&lt;/nav&gt;</code-prism>
+        </div>
+    </slide-content>
+    <slide-content>
+        <br>
+        <br>
+        <blockquote>
+            Libraries > frameworks?<span class="attr"><a href="http://www.breck-mckye.com/blog/2014/12/the-state-of-javascript-in-2015/" target="_blank">- Jimmy Breck-McKye, "The State of JavaScript in 2015"</a></span>
+        </blockquote>
+    </slide-content>
+    <slide-content>
+        <br>
+        <br>
+        <blockquote>
+            Libraries > frameworks?<span class="attr"><a href="http://www.breck-mckye.com/blog/2014/12/the-state-of-javascript-in-2015/" target="_blank">- Jimmy Breck-McKye, "The State of JavaScript in 2015"</a></span>
+        </blockquote>
+        <blockquote>
+            Native functionality > libraries > frameworks.<br><span class="attr">- Me</span>
+        </blockquote>
+    </slide-content>
+    <slide-content>
+        <div class="flex-container">
+            <h1 class="flex-center">But creating your own elements isn't possible...</h1></div>
+    </slide-content>
+    <slide-content>
+        <div class="flex-container">
+            <h1 class="flex-center">... until now.</h1>
+        </div>
+    </slide-content>
+    <slide-content>
+            <h1>Web Components</h1>
+            <blockquote style="float: left; width: 70%; margin-right: 2%;">
+                Web Components usher in a <strong>new era</strong> of web development based on <strong>encapsulated and interoperable</strong> custom elements that extend HTML itself. <span class="attr"><a href="https://www.polymer-project.org/" target="_blank">- Polymer Project</a></span>
+            </blockquote>
+            <img style="float: left; width: 20%; height: 50%;" src="images/webcomponents.svg" />
+    </slide-content>
+<!--     <slide-content>
+            <h1>UI Components</h1>
+                <div class="center-child">
+                    <a class="image-link" href="http://getbootstrap.com/" target="_blank"><img class="library-images" src="images/bower.png" /></a>
+                    <a class="image-link" href="http://foundation.zurb.com/" target="_blank"><img class="library-images" src="images/yeti-f5.png" /></a>
+                    <a class="image-link" href="http://jqueryui.com/" target="_blank"><img class="library-images" src="images/jqueryui.png" /></a>
+                    <a class="image-link" href="http://www.telerik.com/kendo-ui" target="_blank"><img class="library-images" src="images/kendoui.png" /></a>
+                    <br>
+                    <a class="image-link" href="http://dojotoolkit.org/" target="_blank"><img src="images/dojo.png" class="library-images"></a>
+                    <a class="image-link" href="http://www.sencha.com/products/extjs/" target="_blank"><img class="library-images" src="images/sencha.png"  /></a>
+                    <a class="image-link" href="http://yuilibrary.com/" target="_blank"><img src="images/yui.png" class="library-images"></a>
+                </div>
+        </slide-content>
+    <slide-content>
+            <h1>UI Component Challenges</h1>
+            <h2>Portability</h2>
+            <h2>Encapsulation</h2>
+            <h2>Extensibility</h2>
+    </slide-content>
+     -->
+        <slide-content>
+            <h1>Web Component Technologies</h1>
+            <h2>Custom Elements</h2>
+            <h2>HTML Templates</h2>
+            <h2>HTML Imports</h2>
+            <h2>Shadow DOM</h2>
+        </slide-content>
+        <slide-content>
+            <h1>Web Component Technologies</h1>
+            <h2><strong>Custom Elements</strong></h2>
+            <h2>HTML Templates</h2>
+            <h2>HTML Imports</h2>
+            <h2>Shadow DOM</h2>
+        </slide-content>
+        <slide-content>
+            <h1>Custom Elements</h1>
+            <code-prism language="markup">
+&#x3C;my-element&#x3E;Hello World.&#x3C;/my-element&#x3E;
+            </code-prism>
+            <br>
+            <code-prism>
+var MyElement = document.registerElement('my-element', {
+  prototype: Object.create(HTMLElement.prototype)
+});
+            </code-prism>
+        </slide-content>
+        <slide-content>
+            <h1>Web Component Technologies</h1>
+            <h2>Custom Elements</h2>
+            <h2><strong>HTML Templates</strong></h2>
+            <h2>HTML Imports</h2>
+            <h2>Shadow DOM</h2>
+        </slide-content>
+        <slide-content>
+            <h1>HTML Templates</h1>
+        <code-prism language="markup">&lt;template id=&quot;my-template&quot;&gt;
+    &lt;p&gt;Hello World.&lt;/p&gt;
+    &lt;!-- This image won't be downloaded on page load --&gt;
+    &lt;img src=&quot;example.jpg&quot; alt=&quot;Example&quot;&gt;
+&lt;/template&gt;</code-prism>
+        <br>
+        <code-prism language="javascript">document.importNode(
+    document.getElementById('my-template').content,
+    true
+);
+</code-prism>
+        </slide-content>
+        <slide-content>
+            <h1>Web Component Technologies</h1>
+            <h2>Custom Elements</h2>
+            <h2>HTML Templates</h2>
+            <h2><strong>HTML Imports</strong></h2>
+            <h2>Shadow DOM</h2>
+        </slide-content>
+        <slide-content>
+            <h1>HTML Imports</h1>
+            <code-prism language="markup">&lt;link rel=&quot;import&quot; href=&quot;/imports/my-component.html&quot;&gt;</code-prism>
+            <br>
+            <img  class="full-width-image" src="images/htmlimports.gif"  data-reset>
+        </slide-content>
+        <slide-content>
+            <h1>Web Component Technologies</h1>
+            <h2>Custom Elements</h2>
+            <h2>HTML Templates</h2>
+            <h2>HTML Imports</h2>
+            <h2><strong>Shadow DOM</strong></h2>
+        </slide-content>
+        <slide-content>
+            <h1>Browser Shadow DOM</h1>
+            <br>
+            <img class="full-width-image" src="images/useragentshadowdom.gif" alt="" data-reset>
+        </slide-content>
+    <slide-content>
+            <h1>Shadow DOM</h1>
+            <code-prism language="markup">&lt;div id="my-element"&gt;&lt;/div&gt;&lt;p&gt;Light DOM.&lt;/p&gt;</code-prism>
+            <br>
+            <code-prism>// Create Shadow Root
+var s = document.getElementById('my-element').createShadowRoot();
+// Add Styles and Text
+s.innerHTML += '&lt;style&gtp { color: crimson; }&lt;/style&gt';
+s.innerHTML += '&lt;p&gt;Shadow DOM.&lt;/p&gt;';</code-prism>
+            <br><br>
+        <div class="flex-container" style="height: 100px; vertical-align: middle;">
+            <div class="flex-center" style="margin-bottom: 0; border: 1px solid red; max-width: 50%; padding: 10px;">
+                <div id="my-first-element"></div>
+                <p>Light DOM.</p>
+            </div>
+        </div>
+            <br>
+            <script>(function(){var s = document.getElementById('my-first-element').createShadowRoot();s.innerHTML += '<style>p { color: crimson;}</style>';s.innerHTML += '<p>Shadow DOM.</p>';}());</script>
+    </slide-content>
+<!--     <slide-content>
+            <h1>Content Insertion Points</h1>
+            <code-prism language="markup">&lt;div id="my-element"&gt;
+    &lt;content&gt;&lt;/content&gt;
+&lt;/div&gt;</code-prism>
+        </slide-content> -->
+        <slide-content>
+            <h1><code>&lt;content&gt;</code></h1>
+            <code-prism language="markup">&lt;div id="my-element"&gt;&lt;p&gt;Hello!&lt;/p&gt;&lt;/div&gt;</code-prism>
+            <br>
+            <code-prism>var s = document.getElementById('my-element').createShadowRoot();
+s.innerHTML += '&lt;p&gt;Shadow DOM Start.&lt;/p&gt;';
+s.innerHTML += '&lt;style&gtp { color: crimson; }&lt;/style&gt';
+s.innerHTML += '&lt;content&gt;&lt;/content&gt;';
+s.innerHTML += '&lt;p&gt;Shadow DOM End.&lt;/p&gt;';</code-prism>
+            <br>
+            <div class="flex-container" style="height: 100px; vertical-align: middle;">
+                <div class="flex-center" style="margin-bottom: 0; border: 1px solid red; max-width: 50%; padding: 100px;">
+                    <div id="my-element"><p>Hello!</p></div>
+                </div>
+            </div>
+            <script>(function(){var s = document.getElementById('my-element').createShadowRoot();s.innerHTML += '<style>p { color: crimson; margin: 5px 0; }</style>';s.innerHTML += '<p>Shadow DOM Start.</p>';s.innerHTML += '<content></content>';s.innerHTML += '<p>Shadow DOM End.</p>';}());</script>
+        </slide-content>
+<!--         <slide-content>
+            <h1>Multiple <code>&lt;content&gt;</code> Elements</h1>
+
+
+            <br>
+            <code-prism language="markup">&lt;div id=&quot;another-element&quot;&gt;
+  &lt;span class=&quot;name&quot;&gt;BackboneConf&lt;/span&gt;
+  &lt;span class=&quot;greeting&quot;&gt;Hello&lt;/span&gt;
+&lt;/div&gt;</code-prism>
+            <br>
+            <code-prism>s = document.getElementById('another-element').createShadowRoot();
+s.innerHTML += '&lt;content select=".greeting"&gt;&lt;/content&gt;, ';
+s.innerHTML += '&lt;content select=".name"&gt;&lt;/content&gt;!';
+            </code-prism>
+            <br>
+            <div class="flex-container" style="height: 100px; vertical-align: middle;">
+                <div class="flex-center" style="margin-bottom: 0; border: 1px solid red; max-width: 50%; padding: 10px;">
+                    <div id="another-element"><span class="name">BackboneConf</span><span class="greeting">Hello</span></div>
+                </div>
+            </div>
+            <script>(function(){var s = document.getElementById('another-element').createShadowRoot();s.innerHTML += '<content select=".greeting"></content>, '; s.innerHTML += '<content select=".name"></content>!';}());</script>
+        </slide-content> -->
+    <slide-content>
+            <h1>Web Component Technologies</h1>
+            <h2>Custom Elements</h2>
+            <h2>HTML Templates</h2>
+            <h2>HTML Imports</h2>
+            <h2>Shadow DOM</h2>
+    </slide-content>
+    <slide-content>
+        <h1>What Web Components Lack...</h1>
+            <h2><strike>Application Structure</strike></h2>
+            <h2><strike>Server Interface</strike></h2>
+            <h2><strike>URL Router</strike></h2>
+            <h2><strike>Models/Collections + Events</strike></h2>
+        <h2></h2>
+    </slide-content>
+    <slide-content>
+        <h1>...We Gain with Backbone</h1>
+        <h2>Application Structure</h2>
+        <h2>Server Interface</h2>
+        <h2>URL Router</h2>
+        <h2>Models/Collections + Events</h2>
+        <h2></h2>
+    </slide-content>
+    <slide-content>
+        <div class="flex-container">
+            <h1 class="flex-center half-width">Using Web Component Technologies<br>+<br>Backbone</h1>
+        </div>
+    </slide-content>
+    <slide-content>
+        <h1>Backbone + Custom Elements</h1>
+        <code-prism>document.registerElement('my-custom-element', {
+  prototype: Object.create(HTMLElement.prototype)
+});
+
+Backbone.View.extend({
+  tagName: 'my-custom-element'
+});</code-prism>
+    </slide-content>
+    <slide-content>
+        <h1>Backbone + HTML Templates</h1>
+        <code-prism>Backbone.View.extend({
+  template: document.importNode(
+    document.getElementById('my-template').content,
+    true
+  ),
+  render: function() {
+    this.el.innerHTML = this.template;
+  }
+});</code-prism>
+    </slide-content>
+    <slide-content>
+        <h1>Backbone + HTML Imports</h1>
+        <code-prism>&lt;link rel=&quot;import&quot; href=&quot;my-custom-component.html&quot;&gt;</code-prism>
+    </slide-content>
+    <slide-content>
+        <h1>Backbone + Shadow DOM</h1>
+        <code-prism>Backbone.View.extend({
+  initialize: function() {
+    this.el.createShadowRoot();
+  }
+});</code-prism>
+    </slide-content>
+    <slide-content>
+        <div class="flex-container">
+            <h1 class="flex-center half-width">Using Web Component Technologies<br>+<br>Backbone</h1>
+        </div>
+    </slide-content>
+    <slide-content>
+        <div class="flex-container">
+            <h1 class="flex-center half-width">Using Web Components<br>+<br>Backbone</h1>
+        </div>
+    </slide-content>
+    <slide-content>
+        <h1>polymer-project.org/docs/elements</h1>
+        <br>
+        <img class="full-width-image" src="images/polymerproject.png" alt="">
+    </slide-content>
+    <slide-content>
+        <h1>x-tags.org</h1>
+        <br>
+        <img class="full-width-image" src="images/xtags.gif" alt="" data-reset>
+    </slide-content>
+    <slide-content>
+        <h1>component.kitchen</h1>
+        <br>
+        <img class="full-width-image" src="images/componentkitchen.gif" alt="" data-reset>
+    </slide-content>
+    <slide-content>
+        <h1>customelements.io</h1>
+        <br>
+        <img class="full-width-image" src="images/customelementsio.gif" alt="" data-reset>
+    </slide-content>
+    <slide-content>
+        <div class="flex-container">
+            <h1 class="flex-center half-width">Backbone View<br>+<br>Web Component</h1>
+        </div>
+    </slide-content>
+<!--     <slide-content>
+        <h1>Know Your API</h1>
+        <h2>Attributes</h2>
+        <h2>Methods</h2>
+        <h2>Events</h2>
+    </slide-content> -->
+    <slide-content>
+        <h1><code>&lt;paper-toast&gt;</code></h1>
+        <br>
+        <img class="full-width-image" src="images/toast.gif" alt="" data-reset>
+    </slide-content>
+    <slide-content>
+        <h1><code>&lt;paper-toast&gt;</code> API</h1>
+            <code-prism class="flex-center" language="markup">&lt;paper-toast
+  text="Your toast is ready!"
+  duration="5000"
+  autoCloseDisabled
+  opened
+&gt;&lt;/paper-toast&gt;</code-prism>
+            <code-prism class="flex-center">Element.show();
+Element.dismiss();
+Element.toggle();</code-prism>
+        <code-prism class="flex-center">Element.addEventListener('core-overlay-open-completed', doSomething);</code-prism>
+    </slide-content>
+    <slide-content>
+        <div class="flex-container">
+            <code-prism class="flex-center">Backbone.View.extend({
+  tagName: 'paper-toast',
+  attributes: {
+    text: 'Your toast is ready!',
+    autoCloseDisabled: true,
+    duration: '5000',
+    opened: true
+  },
+  events: {
+    'core-overlay-open-completed': 'doSomething'
+  },
+  toggle: function() {
+    this.el.toggle();
+  }
+});</code-prism>
+        </div>
+    </slide-content>
+    
+    <slide-content>
+        <h1><code>&lt;google-map&gt;</code></h1>
+        <br>
+        <img class="full-width-image" src="images/googlemap.gif" alt="" data-reset>
+    </slide-content>
+    <slide-content>
+        <h1><code>&lt;google-map&gt;</code> API</h1>
+            <code-prism class="flex-center" language="markup">&lt;google-map
+  zoom=&quot;10&quot;
+  latitude=&quot;42.3581&quot;
+  longitude=&quot;-71.0636&quot;
+&gt;&lt;/google-map&gt;</code-prism>
+            <code-prism class="flex-center">Element.resize();
+Element.clear();</code-prism>
+        <code-prism class="flex-center">Element.addEventListener('google-map-ready', doSomething);</code-prism>
+    </slide-content>
+    <slide-content>
+        <div class="flex-container">
+            <code-prism class="flex-center">Backbone.View.extend({
+  tagName: 'google-map',
+  attributes: {
+    latitude: '42.3581',
+    longitude: '-71.0636',
+    zoom: '10'
+  },
+  events: {
+    'google-map-ready': 'doSomething'
+  },
+  resize: function() {
+    this.el.resize();
+  }
+});</code-prism>
+        </div>
+    </slide-content>
+    <slide-content>
+        <div class="flex-container">
+            <code-prism class="flex-center">Backbone.View.extend({
+  initialize: function() {
+    this.listenTo(this.model, 'change', _.bind(this.moveMap, this));
+  },
+  tagName: 'google-map',
+  moveMap: function(model) {
+    this.el.setAttribute('latitude', this.model.get('lat'));
+    this.el.setAttribute('longitude', this.model.get('long'));
+    this.el.setAttribute('zoom', this.model.get('zoom'));
+  }
+});</code-prism>
+        </div>
+    </slide-content>
+    <slide-content class="">
+        <br><br>
+        <img class="full-width-image" src="images/mapsapp.gif" alt="" data-reset>
+    </slide-content>
+<!--      <slide-content>
+        <h1><code>&lt;github-card&gt;</code></h1>
+        <h4>By @pazguille</h4>
+        <br>
+        <img class="full-width-image" src="images/githubcard.png" alt="">
+    </slide-content>
+    <slide-content>
+        <h1><code>&lt;x-calendar&gt;</code></h1>
+        <br>
+        <img class="full-width-image" src="images/x-calendar.gif" alt="" data-reset>
+    </slide-content>
+    <slide-content>
+        <h1><code>&lt;x-slidemenu&gt;</code></h1>
+        <br>
+        <img class="full-width-image" src="images/x-slidemenu.gif" alt="" data-reset>
+    </slide-content> -->
+    <slide-content>
+        <div class="flex-container">
+            <div class="flex-center">
+                <h1>Building Web Components<br>for Backbone (or anything else)</h1>
+            </div>
+        </div>
+    </slide-content>
+    <slide-content>
+        <div class="flex-container">
+            <code-prism class="flex-center">├── hello-world
+├──── hello-world.html
+├──── hello-world.js
+└──── bower.json
+            </code-prism>
+        </div>
+    </slide-content>
+    <slide-content>
+    <div class="flex-container">
+            <code-prism language="markup" class="flex-center">&lt;template id=&quot;my-template&quot;&gt;
+  Hello, &lt;content&gt;&lt;/content&gt;!
+&lt;/template&gt;
+&lt;script src=&quot;hello-world.js&quot;&gt;</code-prism>
+        </div>
+    </slide-content>
+    <slide-content>
+    <div class="flex-container">
+            <code-prism class="flex-center">var element = Object.create(HTMLElement.prototype);
+
+element.createdCallback = function() {};
+
+element.attachedCallback = function() {};
+
+element.attributeChangedCallback = function(attr, oldVal, newVal) {};
+
+element.detachedCallback = function() {};
+
+document.registerElement('hello-world', {
+  prototype: element
+});</code-prism>
+        </div>
+    </slide-content>
+    <slide-content>
+    <div class="flex-container">
+            <code-prism class="flex-center" language="markup">&lt;link
+  rel=&quot;import&quot;
+  href=&quot;components/hello-world/hello-world.html&quot;
+&gt;
+
+&lt;!-- [...] --&gt;
+
+&lt;hello-world&gt;I&#39;m a web component&lt;/hello-world&gt;</code-prism>
+        </div>
+    </slide-content>
+    <slide-content>
+        <div class="flex-container">
+            <div class="flex-center">
+                <h1>How It All Fits Together</h1>
+            </div>
+        </div>
+    </slide-content>
+    <slide-content>
+        <h1>Application + Components</h1>
+        <br><br>
+        <div class="diagram-application-block">Application</div>
+        <div class="diagram-component-block">Component</div>
+        <div class="diagram-component-block">Component</div>
+        <div class="diagram-component-block">Component</div>
+        <div class="diagram-component-block">Component</div>
+        <div class="diagram-component-block">Component</div>
+
+        <div class="diagram-component-block">Component</div>
+        <div class="diagram-component-block">Component</div>
+        <div class="diagram-component-block">Component</div>
+        <div class="diagram-component-block">Component</div>
+        <div class="diagram-component-block">Component</div>
+
+        <div class="diagram-component-block">Component</div>
+        <div class="diagram-component-block">Component</div>
+        <div class="diagram-component-block">Component</div>
+        <div class="diagram-component-block">Component</div>
+        <div class="diagram-component-block">Component</div>
+    </slide-content>
+    <slide-content>
+        <h1>Application + Components</h1>
+        <br><br>
+
+        <div class="diagram-application-block"><img src="images/backbone.svg"></div>
+
+        <div class="diagram-component-block"><img src="images/backbone.svg"></div>
+        <div class="diagram-component-block"><img src="images/backbone.svg"></div>
+        <div class="diagram-component-block"><img src="images/backbone.svg"></div>
+        <div class="diagram-component-block"><img src="images/backbone.svg"></div>
+        <div class="diagram-component-block"><img src="images/backbone.svg"></div>
+        <div class="diagram-component-block"><img src="images/backbone.svg"></div>
+
+        <div class="diagram-component-block"><img src="images/backbone.svg"></div>
+        <div class="diagram-component-block"><img src="images/backbone.svg"></div>
+        <div class="diagram-component-block"><img src="images/backbone.svg"></div>
+        <div class="diagram-component-block"><img src="images/backbone.svg"></div>
+        <div class="diagram-component-block"><img src="images/backbone.svg"></div>
+
+        <div class="diagram-component-block"><img src="images/backbone.svg"></div>
+        <div class="diagram-component-block"><img src="images/backbone.svg"></div>
+        <div class="diagram-component-block"><img src="images/backbone.svg"></div>
+        <div class="diagram-component-block"><img src="images/backbone.svg"></div>
+    </slide-content>
+    <slide-content>
+        <h1>Application + Components</h1>
+        <br><br>
+
+        <div class="diagram-application-block"><img src="images/backbone.svg"></div>
+
+        <div class="diagram-component-block"><img src="images/webcomponents.svg"></div>
+        <div class="diagram-component-block"><img src="images/webcomponents.svg"></div>
+        <div class="diagram-component-block"><img src="images/webcomponents.svg"></div>
+        <div class="diagram-component-block"><img src="images/backbone.svg"></div>
+        <div class="diagram-component-block"><img src="images/backbone.svg"></div>
+        <div class="diagram-component-block"><img src="images/backbone.svg"></div>
+
+        <div class="diagram-component-block"><img src="images/backbone.svg"></div>
+        <div class="diagram-component-block"><img src="images/webcomponents.svg"></div>
+        <div class="diagram-component-block"><img src="images/backbone.svg"></div>
+        <div class="diagram-component-block"><img src="images/webcomponents.svg"></div>
+        <div class="diagram-component-block"><img src="images/webcomponents.svg"></div>
+
+        <div class="diagram-component-block"><img src="images/webcomponents.svg"></div>
+        <div class="diagram-component-block"><img src="images/backbone.svg"></div>
+        <div class="diagram-component-block"><img src="images/webcomponents.svg"></div>
+        <div class="diagram-component-block"><img src="images/webcomponents.svg"></div>
+    </slide-content>
+    <slide-content>
+        <h1>Application + Components</h1>
+        <br><br>
+
+        <div class="diagram-application-block"><img src="images/backbone.svg"></div>
+
+        <div class="diagram-component-block"><img src="images/webcomponents.svg"></div>
+        <div class="diagram-component-block"><img src="images/p-logo.svg"></div>
+        <div class="diagram-component-block"><img src="images/p-logo.svg"></div>
+        <div class="diagram-component-block"><img src="images/backbone.svg"></div>
+        <div class="diagram-component-block"><img src="images/backbone.svg"></div>
+
+        <div class="diagram-component-block"><img src="images/backbone.svg"></div>
+        <div class="diagram-component-block"><img src="images/backbone.svg"></div>
+        <div class="diagram-component-block"><img src="images/webcomponents.svg"></div>
+        <div class="diagram-component-block"><img src="images/backbone.svg"></div>
+        <div class="diagram-component-block"><span class="x-tag">&lt; <span>X</span> &gt;</span></div>
+
+        <div class="diagram-component-block"><span class="x-tag">&lt; <span>X</span> &gt;</span></div>
+        <div class="diagram-component-block"><img src="images/webcomponents.svg"></div>
+        <div class="diagram-component-block"><img src="images/backbone.svg"></div>
+        <div class="diagram-component-block"><img src="images/p-logo.svg"></div>
+        <div class="diagram-component-block"><img src="images/webcomponents.svg"></div>
+    </slide-content>
+    <slide-content>
+            <h1>Web Component All the Things??</h1>
+            <code-prism language="markup">&lt;backboneconf-app&gt;
+    &lt;backboneconf-menu&gt;&lt;/backboneconf-menu&gt;
+    &lt;backboneconf-content&gt;&lt;/backboneconf-content&gt;
+    &lt;backboneconf-footer&gt;&lt;/backboneconf-footer&gt;
+&lt;/backboneconf-app&gt;</code-prism>
+    </slide-content>
+        <slide-content>
+            <h1>Probably Not (and that's OK)</h1>
+            <blockquote>
+                I don't ever see us going all in on Custom Elements for every possible thing <small>...</small> <strong>Use native elements and controls when possible and supplement with custom elements</strong>. <br><span class="attr"><a href="http://webcomponents.org/articles/interview-with-joshua-peek/" target="_blank">- Joshua Peek, Github Programmer</a></span>
+            </blockquote>
+        </slide-content>
+    <slide-content>
+        <h1>Should I Componentize?</h1><br>
+        <div style="margin-left: 25px;">
+        <core-label horizontal="" layout="" id="core-label-2">
+             <paper-checkbox for="" role="checkbox" tabindex="0" aria-checked="false" aria-labelledby="core-label-2"></paper-checkbox>
+             <h4>Does it encapsulate component-level logic?</h4>
+        </core-label><br>
+        <core-label horizontal="" layout="" id="core-label-2">
+             <paper-checkbox for="" role="checkbox" tabindex="0" aria-checked="false" aria-labelledby="core-label-2"></paper-checkbox>
+             <h4>Does it take the place of a native element?</h4>
+        </core-label><br>
+        <core-label horizontal="" layout="" id="core-label-2">
+             <paper-checkbox for="" role="checkbox" tabindex="0" aria-checked="false" aria-labelledby="core-label-2"></paper-checkbox>
+             <h4>Should it be portable?</h4>
+        </core-label><br>
+        <core-label horizontal="" layout="" id="core-label-2">
+             <paper-checkbox for="" role="checkbox" tabindex="0" aria-checked="false" aria-labelledby="core-label-2"></paper-checkbox>
+             <h4>Is it context independent?</h4>
+        </core-label><br>
+        <core-label horizontal="" layout="" id="core-label-2">
+             <paper-checkbox for="" role="checkbox" tabindex="0" aria-checked="false" aria-labelledby="core-label-2"></paper-checkbox>
+             <h4>Can the API be represented as attributes, methods, and events?</h4>
+        </core-label>
+        </div>
+    </slide-content>
+    <slide-content>
+      <h1>Best Practices</h1>
+          <div class="half-column">
+              <h2>Small</h2>
+              <h2>Open for Extension</h2>
+              <h2>Documented</h2>
+          </div>
+          <div class="half-column">
+              <h2>Unit Tested</h2>
+              <h2>Accessible</h2>
+              <h2>Idempotent</h2>
+          </div>
+        </slide-content>
+    <slide-content>
+            <h1>Can I Use???</h1>
+            <table class="browser-table">
+                <tr>
+                    <th></th>
+                    <th>Custom Elements</th>
+                    <th>HTML Templates</th>
+                    <th>HTML Imports</th>
+                    <th>Shadow DOM</th>
+                </tr>
+                <tr>
+                    <td><img src="../bower_components/chrome-logo/index.png"></td>
+                    <td class="yes">&#10003;</td>
+                    <td class="yes">&#10003;</td>
+                    <td class="yes">&#10003;</td>
+                    <td class="yes">&#10003;</td>
+                </tr>
+                <tr>
+                    <td><img src="../bower_components/opera-logo/index.png"></td>
+                    <td class="yes">&#10003;</td>
+                    <td class="yes">&#10003;</td>
+                    <td class="yes">&#10003;</td>
+                    <td class="yes">&#10003;</td>
+                </tr>
+                <tr>
+                    <td><img src="../bower_components/firefox-logo/index.png"></td>
+                    <td class="almost">Flag</td>
+                    <td class="yes">&#10003;</td>
+                    <td class="almost">Flag</td>
+                    <td class="almost">Flag</td>
+                </tr>
+                <tr>
+                    <td><img src="../bower_components/safari-logo/index.png"></td>
+                    <td class="no">X</td>
+                    <td class="yes">&#10003;</td>
+                    <td class="no">X</td>
+                    <td class="no">X</td>
+                </tr>
+                <tr>
+                    <td><img src="../bower_components/ie-logo/index.png"></td>
+                    <td class="no">X</td>
+                    <td class="no">X</td>
+                    <td class="no">X</td>
+                    <td class="no">X</td>
+                </tr>
+            </table>
+        </slide-content>
+    <slide-content>
+            <h1>Can I Use???</h1>
+            <table class="browser-table">
+                <tr>
+                    <th></th>
+                    <th>Custom Elements</th>
+                    <th>HTML Templates</th>
+                    <th>HTML Imports</th>
+                    <th>Shadow DOM</th>
+                </tr>
+                <tr>
+                    <td><img src="../bower_components/chrome-logo/index.png"></td>
+                    <td class="yes">&#10003;</td>
+                    <td class="yes">&#10003;</td>
+                    <td class="yes">&#10003;</td>
+                    <td class="yes">&#10003;</td>
+                </tr>
+                <tr>
+                    <td><img src="../bower_components/opera-logo/index.png"></td>
+                    <td class="yes">&#10003;</td>
+                    <td class="yes">&#10003;</td>
+                    <td class="yes">&#10003;</td>
+                    <td class="yes">&#10003;</td>
+                </tr>
+                <tr>
+                    <td><img src="../bower_components/firefox-logo/index.png"></td>
+                    <td class="yes">&#10003;</td>
+                    <td class="yes">&#10003;</td>
+                    <td class="yes">&#10003;</td>
+                    <td class="yes">&#10003;</td>
+                </tr>
+                <tr>
+                    <td><img src="../bower_components/safari-logo/index.png"></td>
+                    <td class="yes">&#10003;</td>
+                    <td class="yes">&#10003;</td>
+                    <td class="yes">&#10003;</td>
+                    <td class="yes">&#10003;</td>
+                </tr>
+                <tr>
+                    <td><img src="../bower_components/ie-logo/index.png"></td>
+                    <td class="yes">&#10003;</td>
+                    <td class="yes">&#10003;</td>
+                    <td class="yes">&#10003;</td>
+                    <td class="yes">&#10003;</td>
+                </tr>
+            </table>
+        <h1 class="title-heading">webcomponents.js</h1>
+        </slide-content>
+    <slide-content>
+        <div class="flex-container">
+            <h1 class="flex-center">Towards a Component Driven Web</h1>
+        </div>
+    </slide-content>
+    <slide-content>
+        <h1>Thanks!</h1>
+        <h2>Resources</h2>
+        <ul class="small-list">
+            <li><a href="http://webcomponents.org/" target="_blank">WebComponents.org</a></li>
+            <li><a href="https://developers.google.com/events/io/sessions/318907648" target="_blank">Web Components: A Tectonic Shift for Web Development</a> by Eric Bidelman</li>
+            <li><a href="http://shop.oreilly.com/product/0636920032922.do" target="_blank"><em>Web Components</em></a> by Jarrod Overson and Jason Strimpel</li>
+            <li><a target="_blank" href="https://github.com/basic-web-components/components-dev/wiki/Ten-Principles-for-Great-General-Purpose-Web-Components">Ten Principles for Great General Purpose Web Components</a></li>
+        </ul>
+        <h2>Colophon</h2>
+        <p>This presentation was built with Backbone.js, Shadow DOM, HTML Templates, HTML Imports, and the Custom Element <code>&lt;slide-content&gt;</code> using <a href="https://github.com/andrewrota/web-component-slides" target="_blank">Web Component Slides</a>.</p>
+    </slide-content>
+    <div class="progress-bar"></div>
+</div>
+<script src="js/bundle.js"></script>
+</body>
+</html>
